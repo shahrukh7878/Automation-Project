@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="MyNucleus Broker Portal Automation Test Suite">
+	
+	<listeners>
+		<listener class-name="com.nucleus.qa.testcases.Listeners"/>  
+	</listeners>
+   <test name="MyNucleus App Test Cases">
+	<classes>
+		<class name="com.nucleus.qa.testcases.LoginPageTest">
+		</class>
+	</classes>
+   </test>
+    </suite> 

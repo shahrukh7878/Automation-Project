@@ -1,0 +1,3 @@
+com\nucleus\qa\testcases\datadriven.class
+com\nucleus\qa\testcases\InfinityTest.class
+com\nucleus\qa\testcases\LoginPageTest.class

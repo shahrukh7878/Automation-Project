@@ -1,0 +1,17 @@
+com\infinity\qa\pages\InfinityHomePage.class
+com\nucleus\qa\pages\myPulsePage.class
+com\nucleus\qa\pages\LoginPage.class
+com\infinity\qa\pages\InfinityDirectorInformationPage.class
+com\nucleus\qa\pages\DirectorInformationPage.class
+com\infinity\qa\pages\InfinityLoanInformationPage.class
+MyNucleusTestAutomation\MyNucleusTest\test.class
+com\nucleus\qa\util\TestUtil.class
+com\nucleus\qa\pages\HomePage.class
+com\nucleus\qa\pages\LoanInformationPage.class
+com\infinity\qa\pages\InfinityNewProposalPage.class
+com\nucleus\qa\base\TestBase.class
+com\nucleus\qa\pages\OfficePage.class
+com\nucleus\qa\pages\NucleusSaleforcePage.class
+com\nucleus\qa\pages\DocumentsPage.class
+com\infinity\qa\pages\InfinityLoginPage.class
+com\nucleus\qa\pages\NewProposalPage.class
