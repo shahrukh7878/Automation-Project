@@ -24,10 +24,11 @@ import com.nucleus.qa.base.TestBase;
 public class datadriven extends TestBase {
 	
 	
-	public ArrayList<String> getData(String testcasename) throws IOException {
+	public ArrayList<String> getData(String testcasename, String path) throws IOException {
 		ArrayList<String> a = new ArrayList<String>();
 		
-		File src=new File("C:\\Users\\ShahrukhAatar\\Documents\\student.xls");
+		File src=new File(path);
+		System.out.println(path);
 		FileInputStream fis = new FileInputStream(src);
 		 HSSFWorkbook workbook = new HSSFWorkbook(fis);   
         // HSSFSheet sheet = workbook.getSheetAt(0); 

@@ -115,6 +115,8 @@ public class LoginPageTest extends TestBase {
 	DataFormatter formatter=new DataFormatter();
 	String sheetName = "Credentilas";
 	ExtentTest logger;
+	
+	String path= "C:\\Users\\ShahrukhAatar\\Documents\\student.xls";
 	public LoginPageTest() {
 		super();
 	}
@@ -161,6 +163,8 @@ public class LoginPageTest extends TestBase {
 	
 	@BeforeMethod
 	public void setUp() throws IOException {
+		
+		
 		
 		initialization();
 		
@@ -296,7 +300,14 @@ public class LoginPageTest extends TestBase {
 
 		try {
 				
-		ArrayList data=d.getData("TestCase1");
+		ArrayList data=d.getData("TestCase1",path);
+		
+		System.out.println(path);
+		
+		
+		
+		
+		
 		String url = (String) data.get(2);
 		driver.get(url);
 		String Username= (String) data.get(3);
@@ -324,6 +335,7 @@ public class LoginPageTest extends TestBase {
 		String BankType = (String) data.get(24);
 		String Name = (String) data.get(29);
 		
+	
 		Screenshot();
 		WriteExtentReport =test1.createNode("Navigate to Application landing page");
 		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
@@ -424,11 +436,12 @@ public class LoginPageTest extends TestBase {
 			WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
 			Office.ClickonCompleteyourOpenBanking();
 			
+			
+			
 			Sleep(6000);
 			Set<String> handles1 = driver.getWindowHandles();
 			List<String> hList1 = new ArrayList<String>(handles1);
 			if(switchToRightWindow("myPulse - Plaid Open Banking",hList1)){
-			   
 			      }
 			Screenshot();
 			WriteExtentReport =test1.createNode("Navigate myPulse Page ");
@@ -471,9 +484,11 @@ public class LoginPageTest extends TestBase {
 	public void TestCase2() throws Exception {
 		 test1 = extent.createTest("Test Case2", "Single Dir OB AS");
 		try {
-		ArrayList data=d.getData("TestCase2");
+		ArrayList data=d.getData("TestCase2",path);
 		String url = (String) data.get(2);
+		
 		driver.get(url);
+		
 		String Username= (String) data.get(3);
 		String Password= (String) data.get(4);
 		String CompanyName=(String) data.get(5);
@@ -683,7 +698,7 @@ public class LoginPageTest extends TestBase {
 		 test1 = extent.createTest("Test Case 3", "Single Dir/Shareholder OB Plaid");
 		try {
 			
-		ArrayList data=d.getData("TestCase3");
+		ArrayList data=d.getData("TestCase3",path);
 		String url = (String) data.get(2);
 		driver.get(url);
 		String Username= (String) data.get(3);
@@ -869,7 +884,7 @@ public class LoginPageTest extends TestBase {
 		
 		try {
 				
-		ArrayList data=d.getData("TestCase4");
+		ArrayList data=d.getData("TestCase4",path);
 		String url = (String) data.get(2);
 		driver.get(url);
 		String Username= (String) data.get(3);
@@ -1053,7 +1068,7 @@ public class LoginPageTest extends TestBase {
 	}
 	}
 	
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void TestCase5() throws Exception  {
 		
 		
@@ -1062,7 +1077,7 @@ public class LoginPageTest extends TestBase {
 
 		try {
 				
-		ArrayList data=d.getData("TestCase5");
+		ArrayList data=d.getData("TestCase5",path);
 		String url = (String) data.get(2);
 		driver.get(url);
 		String Username= (String) data.get(3);
@@ -1195,7 +1210,7 @@ public class LoginPageTest extends TestBase {
 	}
 
 	
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void TestCase6() throws Exception  {
 		
 		
@@ -1204,7 +1219,7 @@ public class LoginPageTest extends TestBase {
 
 		try {
 				
-		ArrayList data=d.getData("TestCase6");
+		ArrayList data=d.getData("TestCase6",path);
 		String url = (String) data.get(2);
 		driver.get(url);
 		String Username= (String) data.get(3);
@@ -1346,13 +1361,13 @@ public class LoginPageTest extends TestBase {
 
 	
 
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void TestCase7() throws Exception  {
 		
 		
 		 test1 = extent.createTest("Test Case 7", "Complete Step1,Step2,Step3");
 		try {	
-		ArrayList data=d.getData("TestCase7");
+		ArrayList data=d.getData("TestCase7",path);
 		String url = (String) data.get(2);
 		driver.get(url);
 		String Username= (String) data.get(3);
@@ -1492,7 +1507,7 @@ public class LoginPageTest extends TestBase {
 
 	
 	
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void TestCase8() throws Exception  {
 		
 		
@@ -1501,7 +1516,7 @@ public class LoginPageTest extends TestBase {
 
 		try {
 				
-		ArrayList data=d.getData("TestCase8");
+		ArrayList data=d.getData("TestCase8",path);
 		String url = (String) data.get(2);
 		driver.get(url);
 		String Username= (String) data.get(3);
@@ -1644,6 +1659,171 @@ public class LoginPageTest extends TestBase {
 	
 
 	@Test(enabled=true)
+	public void TestCase10() throws Exception  {
+		
+		
+		 test1 = extent.createTest("Test Case 10", "OutSide Risk Criteria");
+		
+
+		try {
+				
+		ArrayList data=d.getData("TestCase10",path);
+		String url = (String) data.get(2);
+		driver.get(url);
+		String Username= (String) data.get(3);
+		String Password= (String) data.get(4);
+		String CompanyName=(String) data.get(5);
+		String Email = (String) data.get(6);
+		String PhoneNumber = (String) data.get(7);
+		String BirthDay = (String) data.get(8);
+		String PostCode = (String) data.get(9);
+		String HouseNumber = (String) data.get(10);
+		String HouseName = (String) data.get(11);
+		String City = (String) data.get(12);
+		String Street = (String) data.get(13);
+		String Country = (String) data.get(14);
+		String Fund = (String) data.get(15);
+		String Months = (String) data.get(16);
+		String Percent = (String) data.get(17);
+		String BirthDay1= (String) data.get(18);
+		String Email1 = (String) data.get(19);
+		String MobileNumber = (String) data.get(20);
+		String PhoneNO = (String) data.get(21);
+		String url1 = (String) data.get(22);
+		String Bank = (String) data.get(23);
+		String BankType = (String) data.get(24);
+		String Email2 = (String) data.get(25);
+		String MobileNumber1 = (String) data.get(26);
+		String Email3 = (String) data.get(27);
+		String MobileNumber2 = (String) data.get(28);
+		String Name = (String) data.get(29);
+		
+		Screenshot();
+		WriteExtentReport =test1.createNode("Navigate to Application landing page");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		loginPage.login(Username,Password);	
+		Screenshot();
+		WriteExtentReport = test1.createNode("Navigate to Home Page");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		Sleep(5000);
+		homePage.NewProposal();
+		Screenshot(); 
+		WriteExtentReport =test1.createNode("Navigate NewProposal Page ");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		newproposalpage.LimitedCompany();
+		newproposalpage.SearchCompanyName(CompanyName);
+		newproposalpage.CompanyName(Name);
+		//newproposalpage.PrimaryDirector();
+		
+		
+		
+		
+		
+		Screenshot(); 
+		WriteExtentReport =test1.createNode("Navigate Loan Information Page ");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		
+		
+		
+		new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//p[@id='popmsg']"))).isDisplayed();
+		Sleep(3000);
+		
+		String Message = driver.findElement(By.xpath("//p[@id='popmsg']")).getText();
+		System.out.println(Message);
+		
+		//if(message)
+		
+		new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[contains(text(),'OK')])[3]"))).isDisplayed();
+		
+		driver.findElement(By.xpath("(//a[contains(text(),'OK')])[3]")).click();
+		
+		
+		LoanInfo.FundingNeeded(Fund);
+		LoanInfo.LoanMonths(Months);
+		LoanInfo.SelectPurposeFunding();
+		LoanInfo.BrokerPercent(Percent);
+		LoanInfo.NextStep();
+		Sleep(3000);
+		
+		
+		new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//P[contains(text(),'The previous section is incomplete, please Go Back and complete the section before moving forward.')]"))).isDisplayed();	
+	    driver.findElement(By.id("triggerPreStep")).click();
+	    
+	    Sleep(3000);
+		
+		newproposalpage.EnterAddressManually();
+		newproposalpage.EnterHouseNumber(HouseNumber);
+		newproposalpage.EnterHouseName(HouseName);
+		newproposalpage.EnterCity(City);
+		newproposalpage.EnterStreet(Street);
+		newproposalpage.EnterCountry(Country);
+		newproposalpage.SendPostCode(PostCode);
+		newproposalpage.SelectResidentialPropertyYes();
+		newproposalpage.BusinessAddressSelectYes();
+		newproposalpage.NextButton();
+		Sleep(3000);
+		 LoanInfo.NextStep();
+		
+		
+		
+		Screenshot();
+		WriteExtentReport =test1.createNode("Navigate Director Information Page ");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		Sleep(3000);
+		DirectorInformation.EditDirectorDetails();
+		//DirectorInformation.DateofBirth(BirthDay1);
+		DirectorInformation.Email(Email1);
+		Sleep(1000);
+		DirectorInformation.DirMobile(MobileNumber);
+		DirectorInformation.PersonalGuaranteeYes();
+		DirectorInformation.EnterPostCode(PostCode);
+		DirectorInformation.ClickonFindAddress();
+		Sleep(3000);
+		DirectorInformation.SelectAddress();
+		DirectorInformation.SelectResidentialPropertyYes();
+		DirectorInformation.ClickOnSubmit();
+		Sleep(1000);
+		DirectorInformation.ClickOnNext();
+		Sleep(6000);
+		Screenshot();
+		WriteExtentReport =test1.createNode("Navigate Director Information Page1 ");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		
+		Documents.SelectAccountingPackage();
+		Sleep(3000);
+		Documents.ClickOnDirector();
+		Documents.ClickOnOk();
+		Documents.SelectBank(Bank);
+		Documents.SelectBankAccountType(BankType);
+		System.out.println("9999999999999999999999999999999999999999");
+		Sleep(3000);
+		Documents.ClickOnDirector1();
+		Sleep(3000);
+		Documents.ClickOnOk();
+		Documents.SubmitButton();
+		Sleep(3000);
+		Screenshot();
+		WriteExtentReport =test1.createNode("Navigate Submission Page ");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+	
+	}
+	
+	catch(Exception e) {
+	
+		String Error = e.toString();
+		Screenshot();
+		WriteExtentReport =test1.createNode("Failed Page ");
+		WriteExtentReport.log(Status.FAIL, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+Error);
+
+		
+	}
+	}
+
+	
+	
+	
+	
+	@Test(enabled=false)
 	public void TestCase9() throws Exception  {
 		
 		
@@ -1652,7 +1832,7 @@ public class LoginPageTest extends TestBase {
 
 		try {
 				
-		ArrayList data=d.getData("TestCase9");
+		ArrayList data=d.getData("TestCase9",path);
 		String url = (String) data.get(2);
 		driver.get(url);
 		String Username= (String) data.get(3);
@@ -1704,9 +1884,6 @@ public class LoginPageTest extends TestBase {
 		newproposalpage.EnterBirthDay(BirthDay);
 		Sleep(3000);
 		newproposalpage.NextButton();
-		
-		
-		
 		
 		Screenshot(); 
 		WriteExtentReport =test1.createNode("Navigate Loan Information Page ");
@@ -1796,8 +1973,6 @@ public class LoginPageTest extends TestBase {
 	}
 	}
 
-	
-	
 	
 
 /*	@Test

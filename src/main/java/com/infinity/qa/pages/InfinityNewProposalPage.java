@@ -194,15 +194,26 @@ public class InfinityNewProposalPage extends TestBase {
 	
 	
 	public void EnterEmail(String Email) {
+		
+		EnterEmail.clear();
 		EnterEmail.sendKeys(Email);
 	}
 	
 	public void EnterPhoneNumberField(String PhoneNumber) {
+		EnterPhoneNumberField.clear();
 		EnterPhoneNumberField.sendKeys(PhoneNumber);
 		
 	}
 	
+	
+	public void EnterMobileField(String PhoneNumber) {
+		EnterMobileField.clear();
+		EnterMobileField.sendKeys(PhoneNumber);
+		
+	}
+	
 	public void EnterBirthDay(String BirthDay) {
+		EnterBirthDay.clear();
 		EnterBirthDay.sendKeys(BirthDay);
 	}
 	

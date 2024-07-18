@@ -27,7 +27,9 @@ public class InfinityLoginPage extends TestBase {
 	
 	//Initializing the page Objects
 	public InfinityLoginPage() {
+		
 		PageFactory.initElements(driver, this);
+		
 		}
 	
 	//Actions
@@ -36,6 +38,7 @@ public class InfinityLoginPage extends TestBase {
 	}
 	
 	public boolean  validateLogo() {
+		
 		return mynucleuslogo.isDisplayed();
 		
 	}
