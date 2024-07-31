@@ -156,7 +156,6 @@ public class InfinityTest extends TestBase{
 		String BirthDay = (String) data.get(10);
 		String PostCode = (String) data.get(11);
 		/*
-		
 		String HouseNumber = (String) data.get(10);
 		String HouseName = (String) data.get(11);
 		String City = (String) data.get(12);
@@ -181,156 +180,333 @@ public class InfinityTest extends TestBase{
 		
 		InfinityLogin.login(Username,Password);
 		
-		InfinityHome.NewProposal();
-		InfinityNewProposal.EnterInfinityFundingProposal(CompanyName);
-		driver.findElement(By.xpath("//h3[contains(text(),'"+CompanyName+"')]")).click();
-		//InfinityNewProposal.ClickOnInfinityFundingProposal();
-		InfinityNewProposal.LimitedCompany();
-		new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//h3[contains(text(),'"+CompanyName1+"')]"))).isDisplayed();
-		driver.findElement(By.xpath("//h3[contains(text(),'"+CompanyName1+"')]")).click();
-		new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//h3[contains(text(),'"+Director+"')]"))).isDisplayed();
-		driver.findElement(By.xpath("//h3[contains(text(),'"+Director+"')]")).click();
-		InfinityNewProposal.EnterEmail(Email);
-		InfinityNewProposal.EnterPhoneNumberField(PhoneNumber);
-		InfinityNewProposal.EnterMobileField(PhoneNumber);
-		InfinityNewProposal.EnterBirthDay(BirthDay);
-		InfinityNewProposal.EnterPostCode(PostCode);
-		InfinityNewProposal.ClickOnFindAddress();
-		InfinityNewProposal.SelectAddress();
-		InfinityNewProposal.SelectResidentialPropertyYes();
-		InfinityNewProposal.BusinessAddressSelectYes();
-		InfinityNewProposal.NextButton();
+        new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='search_name']"))).isDisplayed();
 		
-		Sleep(800000);
+		driver.findElement(By.xpath("//input[@id='search_name']")).sendKeys(CompanyName);
 		
-		//InfinityNewProposal.ClickOnCompanyName();
-		//loginPage.login(Username,Password);	
 		Screenshot();
-		WriteExtentReport = test1.createNode("Navigate to Home Page");
+		WriteExtentReport =test1.createNode("Navigate to Company Search Page");
 		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
-		Sleep(5000);
-		//homePage.NewProposal();
-		Screenshot(); 
-		WriteExtentReport =test1.createNode("Navigate NewProposal Page ");
-		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
-		/*newproposalpage.LimitedCompany();
-		newproposalpage.SearchCompanyName(CompanyName);
-		newproposalpage.CompanyName(Name);
-		newproposalpage.PrimaryDirector();
-		newproposalpage.EnterEmail(Email);
-		newproposalpage.EnterPhoneNumberField(PhoneNumber);
-		newproposalpage.EnterBirthDay(BirthDay);
-		newproposalpage.EnterAddressManually();
-		newproposalpage.EnterHouseNumber(HouseNumber);
-		newproposalpage.EnterHouseName(HouseName);
-		newproposalpage.EnterCity(City);
-		newproposalpage.EnterStreet(Street);
-		newproposalpage.EnterCountry(Country);
-		newproposalpage.SendPostCode(PostCode);
-		newproposalpage.SelectResidentialPropertyYes();
-		newproposalpage.BusinessAddressSelectYes();
-		newproposalpage.NextButton();*/
-		Screenshot(); 
-		WriteExtentReport =test1.createNode("Navigate Loan Information Page ");
-		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
-		/*LoanInfo.NucleusBusinessLoan();
-		LoanInfo.ConfirmAlert();
-		LoanInfo.FundingNeeded(Fund);
-		LoanInfo.LoanMonths(Months);
-		LoanInfo.SelectPurposeFunding();
-		LoanInfo.BrokerPercent(Percent);
-		LoanInfo.NextStep();*/
-		Screenshot();
-		WriteExtentReport =test1.createNode("Navigate Director Information Page ");
-		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
-		Sleep(5000);
-		/*try{
-		DirectorInformation.EditDirectorDetails();
-		DirectorInformation.DateofBirth(BirthDay1);
-		DirectorInformation.Email(Email1);
-		Sleep(1000);
-		DirectorInformation.DirMobile(MobileNumber);
-		DirectorInformation.PersonalGuaranteeYes();
-		DirectorInformation.EnterPostCode(PostCode);
-		DirectorInformation.ClickonFindAddress();
-		Sleep(3000);
-		DirectorInformation.SelectAddress();
-		DirectorInformation.SelectResidentialPropertyYes();
-		DirectorInformation.ClickOnSubmit();
-		} catch(Exception e)  
-        {  
-            System.out.println(e);  
-        }  */
-		Sleep(3000);
-	//	DirectorInformation.ClickOnNext();
-		Screenshot();
-		WriteExtentReport =test1.createNode("Navigate Documents Page ");
-		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
-		//Documents.SelectAccountingPackage();
-		Sleep(3000);
-		//Documents.ClickOnDirector();
-		//Documents.ClickOnOk();
-		//Documents.SelectBank(Bank);
-		//Documents.SelectBankAccountType(BankType);
-		Sleep(3000);
-		//Documents.ClickOnDirector1();
-		Sleep(3000);
-		//Documents.ClickOnOk();
-		//Documents.SubmitButton();
-		//driver.get(url1);
-		Sleep(6000);
-		Set<String> handles3 = driver.getWindowHandles();
-		List<String> hList3 = new ArrayList<String>(handles3);
-		if(switchToRightWindow("Mail - Shahrukh Aatar - Outlook",hList3)){
-		      }
-		//Office.ClickOnPulse();
-		//Office.SelectFirstEmail();
-			Sleep(6000);
-			Screenshot();
-			WriteExtentReport =test1.createNode("Navigate Email Page ");
-			WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
-			//Office.ClickOnCompleteApplication();
-			Sleep(6000);
-			Set<String> handles = driver.getWindowHandles();
-			List<String> hList = new ArrayList<String>(handles);
-			if(switchToRightWindow("MyNucleus",hList)){
-			      System.out.println(driver.getCurrentUrl() + ": " + driver.getTitle());
-			      }
-			Screenshot();
-			WriteExtentReport =test1.createNode("Navigate Open Banking Page ");
-			WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
-			//Office.ClickonCompleteyourOpenBanking();
-			Sleep(6000);
-			Set<String> handles1 = driver.getWindowHandles();
-			List<String> hList1 = new ArrayList<String>(handles1);
-			if(switchToRightWindow("myPulse - Plaid Open Banking",hList1)){
-			   
-			      }
-			Screenshot();
-			WriteExtentReport =test1.createNode("Navigate myPulse Page ");
-			WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
-			driver.switchTo().frame(0);
-		   // myPulse.ClickOnContinue();
-		    //myPulse.ClickOnBank();
-		    //myPulse.ClickOnBankWebsite();
-		    Sleep(6000);
-		    Set<String> handles2 = driver.getWindowHandles();
-			List<String> hList2 = new ArrayList<String>(handles2);
-			if(switchToRightWindow("First Platypus Bank - OAuth Login Page",hList2)){
-			      }
-			// myPulse.ClickOnSignIn();
-			//myPulse.ClickOnAccount();
-			//myPulse.ClickOnConnectAccountInformation();
-			if(switchToRightWindow("myPulse - Plaid Open Banking",hList1)){
-			      }
-			Sleep(4000);
-			//myPulse.Congratulations();	
-			Sleep(2000);
-			Screenshot();
-			Sleep(2000);
-			WriteExtentReport =test1.createNode("Navigate Congratulations Page ");
-			WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		
+		 new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'SEARCH')]"))).isDisplayed();
 			
+		 driver.findElement(By.xpath("//button[contains(text(),'SEARCH')]")).click();
+		
+        new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[contains(text(),'PLMD GROUP LTD')])[1]"))).isDisplayed();
+		
+		driver.findElement(By.xpath("(//a[contains(text(),'"+CompanyName+"')])[1]")).click();
+	
+		//Sleep(800000);
+		
+		new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'Nucleus Business Loan')]"))).isDisplayed();
+		
+		Screenshot();
+		WriteExtentReport =test1.createNode("Navigate to Loan Information Page");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		
+		driver.findElement(By.xpath("//div[contains(text(),'Nucleus Business Loan')]")).click();
+		
+		new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//p[@id='popupmessage']"))).isDisplayed();
+		
+		Screenshot();
+		WriteExtentReport =test1.createNode("Navigate to OutSide Risk Criteria Pop-Up Page");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		Sleep(2000);
+		driver.findElement(By.xpath("//a[@id='npreason']//parent::div[1]//child::a[1]")).click();
+	
+        new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'Revenue Based Loan')]"))).isDisplayed();
+        Sleep(2000);
+		driver.findElement(By.xpath("//div[contains(text(),'Revenue Based Loan')]")).click();
+		
+        new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//p[@id='popupmessage']"))).isDisplayed();
+        
+        Screenshot();
+		WriteExtentReport =test1.createNode("Navigate to OutSide Risk Criteria Pop-Up Page1");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		
+		Sleep(2000);
+		driver.findElement(By.xpath("//a[@id='npreason']//parent::div[1]//child::a[1]")).click();
+		
+		 new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'Growth Loans')]"))).isDisplayed();
+		 Sleep(2000);
+		driver.findElement(By.xpath("//div[contains(text(),'Growth Loans')]")).click();
+		
+		Screenshot();
+		WriteExtentReport =test1.createNode("Navigate Growth Loans ");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		
+		
+		 new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[contains(text(),'Confirm')])[1]"))).isDisplayed();
+			
+		 driver.findElement(By.xpath("(//a[contains(text(),'Confirm')])[1]")).click();
+			
+         new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'Merchant cash advance')]"))).isDisplayed();
+         Sleep(2000);
+		 driver.findElement(By.xpath("//div[contains(text(),'Merchant cash advance')]")).click();
+			
+		Screenshot();
+		WriteExtentReport = test1.createNode("Navigate to Merchant cash advance Page");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		Sleep(5000);
+		
+	}
+	
+	catch(Exception e) {
+		String Error = e.toString();
+		System.out.println(Error);
+		Screenshot();
+		WriteExtentReport =test1.createNode("Failed Page ");
+		WriteExtentReport.log(Status.FAIL, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+Error);
+        }
+	}
+
+	
+	@Test(enabled=true)
+	public void TestCase2() throws Exception  {
+		
+		 test1 = extent.createTest("Test Case 2", "InfinityTestCase ");
+	
+		try {
+				
+		ArrayList data=d.getData("TestCase2", path);
+		
+		System.out.println(path);
+		
+		String url = (String) data.get(2);
+		driver.get(url);
+		String Username= (String) data.get(3);
+		String Password= (String) data.get(4);
+		String CompanyName=(String) data.get(5);
+		String CompanyName1=(String) data.get(6);
+		String Director = (String) data.get(7);
+		String Email = (String) data.get(8);
+		String PhoneNumber = (String) data.get(9);
+		String BirthDay = (String) data.get(10);
+		String PostCode = (String) data.get(11);
+		/*
+		String HouseNumber = (String) data.get(10);
+		String HouseName = (String) data.get(11);
+		String City = (String) data.get(12);
+		String Street = (String) data.get(13);
+		String Country = (String) data.get(14);
+		String Fund = (String) data.get(15);
+		String Months = (String) data.get(16);
+		String Percent = (String) data.get(17);
+		System.out.println(Percent);
+		String BirthDay1= (String) data.get(18);
+		String Email1 = (String) data.get(19);
+		String MobileNumber = (String) data.get(20);
+		String PhoneNO = (String) data.get(21);
+		String url1 = (String) data.get(22);
+		String Bank = (String) data.get(23);
+		String BankType = (String) data.get(24);
+		String Name = (String) data.get(29);*/
+		
+		Screenshot();
+		WriteExtentReport =test1.createNode("Navigate to Application landing page");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		
+		InfinityLogin.login(Username,Password);
+		
+        new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='search_name']"))).isDisplayed();
+		
+		driver.findElement(By.xpath("//input[@id='search_name']")).sendKeys(CompanyName);
+		
+		Screenshot();
+		WriteExtentReport =test1.createNode("Navigate to Company Search Page");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		
+		 new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'SEARCH')]"))).isDisplayed();
+			
+		 driver.findElement(By.xpath("//button[contains(text(),'SEARCH')]")).click();
+		
+        new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[contains(text(),'PLMD GROUP LTD')])[1]"))).isDisplayed();
+		
+		driver.findElement(By.xpath("(//a[contains(text(),'"+CompanyName+"')])[1]")).click();
+	
+		//Sleep(800000);
+		
+		new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'Nucleus Business Loan')]"))).isDisplayed();
+		
+		Screenshot();
+		WriteExtentReport =test1.createNode("Navigate to Loan Information Page");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		
+		driver.findElement(By.xpath("//div[contains(text(),'Nucleus Business Loan')]")).click();
+		
+		new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//p[@id='popupmessage']"))).isDisplayed();
+		
+		Screenshot();
+		WriteExtentReport =test1.createNode("Navigate to OutSide Risk Criteria Pop-Up Page");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		Sleep(2000);
+		driver.findElement(By.xpath("//a[@id='npreason']//parent::div[1]//child::a[1]")).click();
+	
+        new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'Revenue Based Loan')]"))).isDisplayed();
+        Sleep(2000);
+		driver.findElement(By.xpath("//div[contains(text(),'Revenue Based Loan')]")).click();
+		
+        new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//p[@id='popupmessage']"))).isDisplayed();
+        
+        Screenshot();
+		WriteExtentReport =test1.createNode("Navigate to OutSide Risk Criteria Pop-Up Page1");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		
+		Sleep(2000);
+		driver.findElement(By.xpath("//a[@id='npreason']//parent::div[1]//child::a[1]")).click();
+		
+		 new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'Growth Loans')]"))).isDisplayed();
+		 Sleep(2000);
+		driver.findElement(By.xpath("//div[contains(text(),'Growth Loans')]")).click();
+		
+		Screenshot();
+		WriteExtentReport =test1.createNode("Navigate Growth Loans ");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		
+		
+		 new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[contains(text(),'Confirm')])[1]"))).isDisplayed();
+			
+		 driver.findElement(By.xpath("(//a[contains(text(),'Confirm')])[1]")).click();
+			
+         new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'Merchant cash advance')]"))).isDisplayed();
+         Sleep(2000);
+		 driver.findElement(By.xpath("//div[contains(text(),'Merchant cash advance')]")).click();
+			
+		Screenshot();
+		WriteExtentReport = test1.createNode("Navigate to Merchant cash advance Page");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		Sleep(5000);
+		
+	}
+	
+	catch(Exception e) {
+		String Error = e.toString();
+		System.out.println(Error);
+		Screenshot();
+		WriteExtentReport =test1.createNode("Failed Page ");
+		WriteExtentReport.log(Status.FAIL, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+Error);
+        }
+	}
+
+	
+	
+	
+	@Test(enabled=true)
+	public void TestCase3() throws Exception  {
+		
+		 test1 = extent.createTest("Test Case 3", "InfinityTestCase ");
+	
+		try {
+				
+		ArrayList data=d.getData("TestCase3", path);
+		
+		System.out.println(path);
+		
+		String url = (String) data.get(2);
+		driver.get(url);
+		String Username= (String) data.get(3);
+		String Password= (String) data.get(4);
+		String CompanyName=(String) data.get(5);
+		String CompanyName1=(String) data.get(6);
+		String Director = (String) data.get(7);
+		String Email = (String) data.get(8);
+		String PhoneNumber = (String) data.get(9);
+		String BirthDay = (String) data.get(10);
+		String PostCode = (String) data.get(11);
+		/*
+		String HouseNumber = (String) data.get(10);
+		String HouseName = (String) data.get(11);
+		String City = (String) data.get(12);
+		String Street = (String) data.get(13);
+		String Country = (String) data.get(14);
+		String Fund = (String) data.get(15);
+		String Months = (String) data.get(16);
+		String Percent = (String) data.get(17);
+		System.out.println(Percent);
+		String BirthDay1= (String) data.get(18);
+		String Email1 = (String) data.get(19);
+		String MobileNumber = (String) data.get(20);
+		String PhoneNO = (String) data.get(21);
+		String url1 = (String) data.get(22);
+		String Bank = (String) data.get(23);
+		String BankType = (String) data.get(24);
+		String Name = (String) data.get(29);*/
+		
+		Screenshot();
+		WriteExtentReport =test1.createNode("Navigate to Application landing page");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		
+		InfinityLogin.login(Username,Password);
+		
+        new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='search_name']"))).isDisplayed();
+		
+		driver.findElement(By.xpath("//input[@id='search_name']")).sendKeys(CompanyName);
+		
+		Screenshot();
+		WriteExtentReport =test1.createNode("Navigate to Company Search Page");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		
+		 new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'SEARCH')]"))).isDisplayed();
+			
+		 driver.findElement(By.xpath("//button[contains(text(),'SEARCH')]")).click();
+		
+        new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[contains(text(),'"+CompanyName+"')])[1]"))).isDisplayed();
+		
+		driver.findElement(By.xpath("(//a[contains(text(),'"+CompanyName+"')])[1]")).click();
+	
+		//Sleep(800000);
+		
+		new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'Nucleus Business Loan')]"))).isDisplayed();
+		
+		Screenshot();
+		WriteExtentReport =test1.createNode("Navigate to Loan Information Page");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		
+		driver.findElement(By.xpath("//div[contains(text(),'Nucleus Business Loan')]")).click();
+		
+		new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//p[@id='popupmessage']"))).isDisplayed();
+		
+		Screenshot();
+		WriteExtentReport =test1.createNode("Navigate to OutSide Risk Criteria Pop-Up Page");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		Sleep(2000);
+		driver.findElement(By.xpath("//a[@id='npreason']//parent::div[1]//child::a[1]")).click();
+	
+        new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'Revenue Based Loan')]"))).isDisplayed();
+        Sleep(2000);
+		driver.findElement(By.xpath("//div[contains(text(),'Revenue Based Loan')]")).click();
+		
+        new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//p[@id='popupmessage']"))).isDisplayed();
+        
+        Screenshot();
+		WriteExtentReport =test1.createNode("Navigate to OutSide Risk Criteria Pop-Up Page1");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		
+		Sleep(2000);
+		driver.findElement(By.xpath("//a[@id='npreason']//parent::div[1]//child::a[1]")).click();
+		
+		 new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'Growth Loans')]"))).isDisplayed();
+		 Sleep(2000);
+		driver.findElement(By.xpath("//div[contains(text(),'Growth Loans')]")).click();
+		
+		Screenshot();
+		WriteExtentReport =test1.createNode("Navigate Growth Loans ");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		
+		
+		 new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[contains(text(),'Confirm')])[1]"))).isDisplayed();
+			
+		 driver.findElement(By.xpath("(//a[contains(text(),'Confirm')])[1]")).click();
+			
+         new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'Merchant cash advance')]"))).isDisplayed();
+         Sleep(2000);
+		 driver.findElement(By.xpath("//div[contains(text(),'Merchant cash advance')]")).click();
+			
+		Screenshot();
+		WriteExtentReport = test1.createNode("Navigate to Merchant cash advance Page");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		Sleep(5000);
+		
 	}
 	
 	catch(Exception e) {

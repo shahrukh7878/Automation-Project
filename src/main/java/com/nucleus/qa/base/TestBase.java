@@ -142,7 +142,7 @@ public class TestBase{
 	
 		//ArrayList data=d.getData("");
 		//String url =(String) data.get(1);
-		System.setProperty("webdriver.edge.driver", "C://Users//ShahrukhAatar//Downloads//edgedriver_win64//msedgedriver.exe");
+		System.setProperty("webdriver.edge.driver", "C://Users//ShahrukhAatar//OneDrive - Nucleus Services Ltd//Downloads//edgedriver_win32//msedgedriver.exe");
 		driver = new EdgeDriver();
 		/*String browserName=prop.getProperty("browser");
 		
@@ -165,7 +165,7 @@ public class TestBase{
 	public static void initializationoffice() {
 		
 		
-		System.setProperty("webdriver.edge.driver", "C://Users//ShahrukhAatar//Downloads//edgedriver_win64//msedgedriver.exe");
+		System.setProperty("webdriver.edge.driver", "C://Users//ShahrukhAatar//OneDrive - Nucleus Services Ltd//Downloads//edgedriver_win32//msedgedriver.exe");
 		driver = new EdgeDriver();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
@@ -178,14 +178,14 @@ public class TestBase{
 	
 	
 	public static void initializationInfinity() {
-		System.setProperty("webdriver.edge.driver", "C://Users//ShahrukhAatar//Downloads//edgedriver_win64//msedgedriver.exe");
+		System.setProperty("webdriver.edge.driver", "C://Users//ShahrukhAatar//OneDrive - Nucleus Services Ltd//Downloads//edgedriver_win32//msedgedriver.exe");
 		driver = new EdgeDriver();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 		//driver.get(prop.getProperty("url"));
-		driver.get("https://myfunding.ncf-sandbox.com/");
+		//driver.get("https://myfunding.ncf-sandbox.com/");
 	}
 	
 	 public static void switchToWindow(int index) {

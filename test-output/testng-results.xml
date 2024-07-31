@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="9" total="10" passed="1" failed="0" skipped="0">
+<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-17T20:30:05 IST" name="Default suite" finished-at="2024-07-17T20:30:59 IST" duration-ms="54096">
+  <suite started-at="2024-07-31T12:44:52 IST" name="Default suite" finished-at="2024-07-31T12:45:22 IST" duration-ms="30675">
     <groups>
     </groups>
-    <test started-at="2024-07-17T20:30:05 IST" name="Default test" finished-at="2024-07-17T20:30:59 IST" duration-ms="54096">
-      <class name="com.nucleus.qa.testcases.LoginPageTest">
-        <test-method is-config="true" signature="start()[pri:0, instance:com.nucleus.qa.testcases.LoginPageTest@251ebf23]" started-at="2024-07-17T20:30:05 IST" name="start" finished-at="2024-07-17T20:30:05 IST" duration-ms="17" status="PASS">
+    <test started-at="2024-07-31T12:44:52 IST" name="Default test" finished-at="2024-07-31T12:45:22 IST" duration-ms="30675">
+      <class name="com.nucleus.qa.testcases.mycollection">
+        <test-method is-config="true" signature="start()[pri:0, instance:com.nucleus.qa.testcases.mycollection@2654635]" started-at="2024-07-31T12:44:52 IST" name="start" finished-at="2024-07-31T12:44:52 IST" duration-ms="18" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- start -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.nucleus.qa.testcases.LoginPageTest@251ebf23]" started-at="2024-07-17T20:30:05 IST" name="setUp" finished-at="2024-07-17T20:30:07 IST" duration-ms="2244" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.nucleus.qa.testcases.mycollection@2654635]" started-at="2024-07-31T12:44:52 IST" name="setUp" finished-at="2024-07-31T12:44:55 IST" duration-ms="3616" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="TestCase10()[pri:0, instance:com.nucleus.qa.testcases.LoginPageTest@251ebf23]" started-at="2024-07-17T20:30:07 IST" name="TestCase10" finished-at="2024-07-17T20:30:59 IST" duration-ms="51454" status="PASS">
+        <test-method signature="TestCase1()[pri:0, instance:com.nucleus.qa.testcases.mycollection@2654635]" started-at="2024-07-31T12:44:55 IST" name="TestCase1" finished-at="2024-07-31T12:45:22 IST" duration-ms="26479" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TestCase10 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.nucleus.qa.testcases.LoginPageTest@251ebf23]" started-at="2024-07-17T20:30:59 IST" name="tearDown" finished-at="2024-07-17T20:30:59 IST" duration-ms="372" status="PASS">
+        </test-method> <!-- TestCase1 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.nucleus.qa.testcases.mycollection@2654635]" started-at="2024-07-31T12:45:22 IST" name="tearDown" finished-at="2024-07-31T12:45:22 IST" duration-ms="522" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="Exit()[pri:0, instance:com.nucleus.qa.testcases.LoginPageTest@251ebf23]" started-at="2024-07-17T20:30:59 IST" name="Exit" finished-at="2024-07-17T20:30:59 IST" duration-ms="341" status="PASS">
+        <test-method is-config="true" signature="Exit()[pri:0, instance:com.nucleus.qa.testcases.mycollection@2654635]" started-at="2024-07-31T12:45:23 IST" name="Exit" finished-at="2024-07-31T12:45:23 IST" duration-ms="695" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Exit -->
-      </class> <!-- com.nucleus.qa.testcases.LoginPageTest -->
+      </class> <!-- com.nucleus.qa.testcases.mycollection -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

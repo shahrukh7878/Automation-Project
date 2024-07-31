@@ -1,5 +1,7 @@
 package com.nucleus.qa.testcases;
 
+import static io.restassured.RestAssured.given;
+
 import java.awt.AWTException;
 import java.awt.HeadlessException;
 import java.awt.Robot;
@@ -52,6 +54,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import com.nucleus.qa.base.Api;
 import com.nucleus.qa.base.TestBase;
 import com.nucleus.qa.pages.DirectorInformationPage;
 import com.nucleus.qa.pages.DocumentsPage;
@@ -64,6 +68,9 @@ import com.nucleus.qa.pages.OfficePage;
 import com.nucleus.qa.pages.ShareholderDetailsPage;
 import com.nucleus.qa.pages.myPulsePage;
 import com.nucleus.qa.util.TestUtil;
+
+import io.restassured.response.Response;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
@@ -164,23 +171,34 @@ public class LoginPageTest extends TestBase {
 	@BeforeMethod
 	public void setUp() throws IOException {
 		
+		/*String sRequest = "https://myfunding.ncf-sandbox.com/deleteCompanyData/09448371";
 		
+		Response response = given()
+				.contentType("application/json")
+				.accept("application/json")
+				//.header("Authorization","a45e7250f2b06ad85f35bb4c24292f12e009088d57efa05aa9a036faeab71ea4")
+				//.header("Authorization",sTokenkey)
+				//.body(userDetails)
+				.when()
+				.get(sRequest)
+				.then()
+				//.statusCode(200)
+				//.contentType("application/json")
+				.extract()
+				.response();
+
+		int iResponseCode = response.getStatusCode();
+		System.out.println(response.getStatusCode());
+		System.out.println("-------------"+response.asString());
+		System.out.println("-------------"+response.getBody().asString());
+		//int iResponseCode = response.getStatusCode();
+		System.out.println("-------------"+iResponseCode);
+		System.out.println("-------------"+response.getStatusLine());
+		System.out.println("-------------"+response.getHeader("content-type"));
+		System.out.println("-------------"+response.getTime()+" Seconds");*/
+
 		
 		initialization();
-		
-		 //TestBase.createReports();
-		    /* String path = System.getProperty("user.dir")+ "\\reports\\index.html";
-			 ExtentSparkReporter reporter = new ExtentSparkReporter(path);
-			 reporter.config().setReportName("Web Automation Results");
-			 reporter.config().setDocumentTitle("TestResult");
-			 extent =new ExtentReports();
-			 extent.attachReporter(reporter);
-			 extent.setSystemInfo("Tester", "Rahul Shetty");*/
-			 
-				/*
-				 * ExtentReports extent = new ExtentReports(); extent.attachReporter(reporter);
-				 * extent.setSystemInfo()
-				 */
 	    loginPage = new LoginPage();
 		testutil = new TestUtil();
 		homePage = new HomePage();
@@ -196,6 +214,7 @@ public class LoginPageTest extends TestBase {
 		InfinityHome = new InfinityHomePage();
 		InfinityNewProposal=new InfinityNewProposalPage();
 		 d = new datadriven();	
+		 
 	}
 
 	
@@ -263,19 +282,11 @@ public class LoginPageTest extends TestBase {
 			Framework.CreateResults(false, sErrorLog);
 		}
 		
-		
 		//driver.get("https://myfunding.ncf-sandbox.com/");
-		
-	   
-		
-	}
-	   
-		
+	
+	   }
 	
 	catch(Exception e) {
-		
-		
-		
 		
 		//File DestFile=new File(sScreenshotFilePath);
 		
@@ -285,13 +296,12 @@ public class LoginPageTest extends TestBase {
 		Screenshot();
 		//String screenshotPath = TestBase.Screenshot();
         test1.fail("Test Case failed check screenshot below"+test1.addScreenCaptureFromPath(sScreenshotFilePath));
-		
-		
+	
 	}
 	}*/
 	
 	
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void TestCase1() throws Exception  {
 		
 		
@@ -299,15 +309,11 @@ public class LoginPageTest extends TestBase {
 		
 
 		try {
+			
+			//Api.API_01();
 				
 		ArrayList data=d.getData("TestCase1",path);
-		
 		System.out.println(path);
-		
-		
-		
-		
-		
 		String url = (String) data.get(2);
 		driver.get(url);
 		String Username= (String) data.get(3);
@@ -1658,13 +1664,11 @@ public class LoginPageTest extends TestBase {
 	
 	
 
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void TestCase10() throws Exception  {
 		
 		
 		 test1 = extent.createTest("Test Case 10", "OutSide Risk Criteria");
-		
-
 		try {
 				
 		ArrayList data=d.getData("TestCase10",path);
@@ -1718,99 +1722,55 @@ public class LoginPageTest extends TestBase {
 		
 		
 		
-		
-		Screenshot(); 
-		WriteExtentReport =test1.createNode("Navigate Loan Information Page ");
-		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
-		
-		
-		
 		new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//p[@id='popmsg']"))).isDisplayed();
 		Sleep(3000);
 		
 		String Message = driver.findElement(By.xpath("//p[@id='popmsg']")).getText();
-		System.out.println(Message);
+		String[] myArray = Message.split(",");
 		
-		//if(message)
+		String part1 = myArray[0];
+		String part2 = myArray[1];
+		System.out.println(part1);
+		System.out.println(part2);
+		String Array = part2;
+		String[] myArray1 = Array.split("\\.");
+		
+		String Text = myArray1[0];
+		String Text1 = myArray1[1];
+		Screenshot(); 
+		WriteExtentReport =test1.createNode("Navigate OutSide Risk Criteria Pop-Up");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
 		
 		new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[contains(text(),'OK')])[3]"))).isDisplayed();
 		
 		driver.findElement(By.xpath("(//a[contains(text(),'OK')])[3]")).click();
 		
+		System.out.println("999999999999999999"+Text);
+	//	System.out.println(Text1);
 		
-		LoanInfo.FundingNeeded(Fund);
-		LoanInfo.LoanMonths(Months);
-		LoanInfo.SelectPurposeFunding();
-		LoanInfo.BrokerPercent(Percent);
-		LoanInfo.NextStep();
-		Sleep(3000);
-		
-		
-		new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//P[contains(text(),'The previous section is incomplete, please Go Back and complete the section before moving forward.')]"))).isDisplayed();	
-	    driver.findElement(By.id("triggerPreStep")).click();
-	    
-	    Sleep(3000);
-		
-		newproposalpage.EnterAddressManually();
-		newproposalpage.EnterHouseNumber(HouseNumber);
-		newproposalpage.EnterHouseName(HouseName);
-		newproposalpage.EnterCity(City);
-		newproposalpage.EnterStreet(Street);
-		newproposalpage.EnterCountry(Country);
-		newproposalpage.SendPostCode(PostCode);
-		newproposalpage.SelectResidentialPropertyYes();
-		newproposalpage.BusinessAddressSelectYes();
-		newproposalpage.NextButton();
-		Sleep(3000);
-		 LoanInfo.NextStep();
-		
-		
-		
-		Screenshot();
-		WriteExtentReport =test1.createNode("Navigate Director Information Page ");
-		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
-		Sleep(3000);
-		DirectorInformation.EditDirectorDetails();
-		//DirectorInformation.DateofBirth(BirthDay1);
-		DirectorInformation.Email(Email1);
-		Sleep(1000);
-		DirectorInformation.DirMobile(MobileNumber);
-		DirectorInformation.PersonalGuaranteeYes();
-		DirectorInformation.EnterPostCode(PostCode);
-		DirectorInformation.ClickonFindAddress();
-		Sleep(3000);
-		DirectorInformation.SelectAddress();
-		DirectorInformation.SelectResidentialPropertyYes();
-		DirectorInformation.ClickOnSubmit();
-		Sleep(1000);
-		DirectorInformation.ClickOnNext();
-		Sleep(6000);
-		Screenshot();
-		WriteExtentReport =test1.createNode("Navigate Director Information Page1 ");
-		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
-		
-		Documents.SelectAccountingPackage();
-		Sleep(3000);
-		Documents.ClickOnDirector();
-		Documents.ClickOnOk();
-		Documents.SelectBank(Bank);
-		Documents.SelectBankAccountType(BankType);
-		System.out.println("9999999999999999999999999999999999999999");
-		Sleep(3000);
-		Documents.ClickOnDirector1();
-		Sleep(3000);
-		Documents.ClickOnOk();
-		Documents.SubmitButton();
-		Sleep(3000);
-		Screenshot();
-		WriteExtentReport =test1.createNode("Navigate Submission Page ");
-		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		String str2 = Text;
+	String str1 ="we cannot support GROOVE ASSOCIATES LIMITED at this time as the Customer is Outside our Risk Criteria due to a previous application";
+	/*	if(str2.equalsIgnoreCase(str1)) {
+			
+			Sleep(1000000);
+			System.out.println("1010101666666666666666666665555555555555555");
+			
+		}
+		else
+		{
+			System.out.println("1010101666666666666666666665555555555555555");
+		}*/
 	
+		Screenshot();
+		WriteExtentReport =test1.createNode("Navigate  NewProposal Page");
+		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		
 	}
 	
 	catch(Exception e) {
 	
 		String Error = e.toString();
+		System.out.println(Error);
 		Screenshot();
 		WriteExtentReport =test1.createNode("Failed Page ");
 		WriteExtentReport.log(Status.FAIL, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+Error);

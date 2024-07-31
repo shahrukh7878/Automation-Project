@@ -30,9 +30,6 @@ public class InfinityNewProposalPage extends TestBase {
 	@FindBy(xpath="//input[@id='Infinity_lead']")
 	WebElement EnterInfinityFundingProposal;
 	
-	
-	
-	
 	//@FindBy(id="result1")
 	//WebElement ClickOnInfinityFundingProposal;
 	
@@ -47,9 +44,7 @@ public class InfinityNewProposalPage extends TestBase {
 	
 	@FindBy(xpath="(//ul[@id='myUL']//child::li)[1]")
 	WebElement CompanyName;
-	
-	
-	
+
 	@FindBy(xpath="(//div[@class='list-result'])[1]")
 	WebElement PrimaryDirector;
 	
