@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.nucleus.qa.testcases.mycollection">
+      <class name="com.nucleus.qa.testcases.LoginPageTest">
         <methods>
-          <include name="setUp"/>
-          <include name="Exit"/>
+          <include name="TestCase2"/>
           <include name="tearDown"/>
-          <include name="TestCase1"/>
+          <include name="Exit"/>
           <include name="start"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- com.nucleus.qa.testcases.mycollection -->
+      </class> <!-- com.nucleus.qa.testcases.LoginPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

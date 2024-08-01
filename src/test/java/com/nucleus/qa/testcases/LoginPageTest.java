@@ -486,14 +486,14 @@ public class LoginPageTest extends TestBase {
 	}
 	}
 	
-	@Test (enabled=false)
+	@Test (enabled=true)
 	public void TestCase2() throws Exception {
 		 test1 = extent.createTest("Test Case2", "Single Dir OB AS");
 		try {
 		ArrayList data=d.getData("TestCase2",path);
 		String url = (String) data.get(2);
 		
-		driver.get(url);
+		
 		
 		String Username= (String) data.get(3);
 		String Password= (String) data.get(4);
@@ -523,6 +523,60 @@ public class LoginPageTest extends TestBase {
 		String Email3 = (String) data.get(27);
 		String MobileNumber2 = (String) data.get(28);
 		String Name = (String) data.get(29);
+		System.out.println("11111111111111111 Before 555555555555555555555555");
+		
+		driver.get("https://nucleus--qa.sandbox.my.salesforce.com/");
+		
+		driver.findElement(By.xpath("//input[@id='username']")).sendKeys("shahrukh.aatar@mypulse.io.qa");
+		
+		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Hasanw@123456");
+		
+		driver.findElement(By.xpath("//input[@id='Login']")).click();
+		Sleep(5000);
+		
+		//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@title='User']"))).isDisplayed();
+		// new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//td[contains(text(),'"+CWID+"')]"))).isDisplayed();
+		//driver.findElement(By.xpath("//img[@title='User']")).click();
+		//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Switch to Salesforce Classic')]"))).isDisplayed();
+		//driver.findElement(By.xpath("//a[contains(text(),'Switch to Salesforce Classic')]")).click();
+		driver.findElement(By.xpath("//input[@id='phSearchInput']")).sendKeys(CompanyName);
+		System.out.println("sendkeys111111111111111111");
+		//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'"+CompanyName+"')]"))).isDisplayed();
+		
+		new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='phSearchButton']"))).isDisplayed();
+		driver.findElement(By.xpath("//input[@id='phSearchButton']")).click();
+		System.out.println("click on serch111111111111111111");
+		
+		new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Leads')]"))).isDisplayed();
+		driver.findElement(By.xpath("//a[contains(text(),'Leads')]")).click();
+		
+		Sleep(5000);
+		
+		System.out.println("click on serch111111111111111111");
+		Sleep(5000);
+		driver.findElement(By.xpath("//input[@id='phSearchInput']")).sendKeys(CompanyName);
+		System.out.println("click on serch222222222222222222222222222");
+		Sleep(5000);
+		driver.findElement(By.xpath("//input[@id='phSearchButton']")).click();
+		
+		Sleep(5000);
+		/*new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Leads')]"))).isDisplayed();
+		driver.findElement(By.xpath("//a[contains(text(),'Leads')]")).click();
+		
+		Sleep(5000);
+		driver.findElement(By.xpath("//input[@id='phSearchInput']")).sendKeys(CompanyName);
+		System.out.println("click on serch222222222222222222222222222");
+		Sleep(5000);
+		driver.findElement(By.xpath("//input[@id='phSearchButton']")).click();		
+		System.out.println("click on serch23333333333333333333333333333333");*/
+		Sleep(5000);
+		driver.findElement(By.xpath("(//a[contains(text(),'"+CompanyName+"')])[1]")).click();
+		Sleep(5000);
+		driver.findElement(By.xpath("(//input[@value='Delete'])[1]")).click();
+		Sleep(5000);
+		driver.switchTo().alert().accept();
+		
+		//driver.get(url);
 		
 		Screenshot();
 		WriteExtentReport =test1.createNode("Navigate to Application landing page");
@@ -1664,7 +1718,7 @@ public class LoginPageTest extends TestBase {
 	
 	
 
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void TestCase10() throws Exception  {
 		
 		
