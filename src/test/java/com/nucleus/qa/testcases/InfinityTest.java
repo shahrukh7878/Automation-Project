@@ -236,14 +236,12 @@ public class InfinityTest extends TestBase{
 		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
 		
 		
-		 new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[contains(text(),'Confirm')])[1]"))).isDisplayed();
-			
+		 new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[contains(text(),'Confirm')])[1]"))).isDisplayed();	
 		 driver.findElement(By.xpath("(//a[contains(text(),'Confirm')])[1]")).click();
 			
          new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'Merchant cash advance')]"))).isDisplayed();
          Sleep(2000);
 		 driver.findElement(By.xpath("//div[contains(text(),'Merchant cash advance')]")).click();
-			
 		Screenshot();
 		WriteExtentReport = test1.createNode("Navigate to Merchant cash advance Page");
 		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");

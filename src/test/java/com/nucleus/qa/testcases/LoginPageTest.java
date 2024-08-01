@@ -301,7 +301,7 @@ public class LoginPageTest extends TestBase {
 	}*/
 	
 	
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void TestCase1() throws Exception  {
 		
 		
@@ -1664,7 +1664,7 @@ public class LoginPageTest extends TestBase {
 	
 	
 
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void TestCase10() throws Exception  {
 		
 		

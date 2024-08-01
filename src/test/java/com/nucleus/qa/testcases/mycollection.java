@@ -129,6 +129,10 @@ public class mycollection extends TestBase {
 		 Sleep(2000);
 		 driver.findElement(By.xpath("//span[@id='dd_date']")).click();
 		 Sleep(2000);
+		 
+		 driver.findElement(By.xpath("(//th[@class='prev'])[1]")).click();
+		 Sleep(2000);
+		 
 		 driver.findElement(By.xpath("(//div[@class='datepicker-days']//child::table//child::tbody//child::tr)[4]//td[contains(text(),'21')]")).click();
 		 driver.findElement(By.xpath("(//button[@type='submit'])[1]")).click();
 		
@@ -202,7 +206,7 @@ public class mycollection extends TestBase {
 	
 	
 
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void TestCase2() throws Exception  {
 		
 		 test1 = extent.createTest("Test Case 2", "Post Manual Payment");
@@ -298,7 +302,6 @@ public class mycollection extends TestBase {
          if(Message1.equalsIgnoreCase(DDMandateStatus)) {
 			 
 			 System.out.println("pass");
-			 
 		 }
         if(Message2.equalsIgnoreCase(Portfolio)) {
 			 
@@ -338,7 +341,7 @@ public class mycollection extends TestBase {
 		 
 		 driver.findElement(By.xpath("//input[@id='post_payment_date']")).click();
 		 Sleep(1000);
-		 driver.findElement(By.xpath("(//div[@class='datepicker-days']//child::table//child::tbody//child::tr)[4]//td[contains(text(),'24')]")).click();
+		 driver.findElement(By.xpath("//div[@class='datepicker-days']//child::table//child::tbody//child::tr//td[@class='day']")).click();
 		 
 		 driver.findElement(By.xpath("//textarea[@id='comments']")).sendKeys("Payment update");
 		 
@@ -363,8 +366,7 @@ public class mycollection extends TestBase {
         }
 	}
 
-	
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void TestCase3() throws Exception  {
 		
 		 test1 = extent.createTest("Test Case 3", "Post Manual Payment");
@@ -394,31 +396,23 @@ public class mycollection extends TestBase {
 		String DisbursementAmount = (String) data.get(17);
 		String CWID = (String) data.get(18);
 		
-		
-	
 		Screenshot();
 		WriteExtentReport =test1.createNode("Navigate to Application landing page");
 		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
-		
 		mycollectionLogin.login(Username,Password);
-		
 		Sleep(2000);
 		Screenshot();
 		WriteExtentReport =test1.createNode("Navigate to Home Page");
 	    WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
 			
-		
         new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//h3[contains(text(),'DASHBOARD')]"))).isDisplayed();
         
         new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("(//nav[@id='sidebar']//child::ul//preceding::li)[3]"))).isDisplayed();
-     
 		driver.findElement(By.xpath("(//nav[@id='sidebar']//child::ul//preceding::li)[3]")).click();
 		Sleep(2000);
 		Screenshot();
 		WriteExtentReport =test1.createNode("Navigate to Payments Page");
 	    WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
-			
-		
 		 new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//h3[contains(text(),'POST MANUAL PAYMENT')]"))).isDisplayed();
 		
 		 driver.findElement(By.xpath("//h3[contains(text(),'POST MANUAL PAYMENT')]")).click();
@@ -436,7 +430,7 @@ public class mycollection extends TestBase {
 		 WriteExtentReport =test1.createNode("Navigate to Enter CW Name Page");
 		 WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
 				
-		 
+		
 		 new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//td[contains(text(),'"+CompanyName+"')]"))).isDisplayed();
 		 new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//td[contains(text(),'"+CWID+"')]"))).isDisplayed();
 			
@@ -502,7 +496,7 @@ public class mycollection extends TestBase {
 		 
 		 driver.findElement(By.xpath("//input[@id='post_payment_date']")).click();
 		 Sleep(2000);
-		 driver.findElement(By.xpath("(//div[@class='datepicker-days']//child::table//child::tbody//child::tr)[4]//td[contains(text(),'24')]")).click();
+		 driver.findElement(By.xpath("//div[@class='datepicker-days']//child::table//child::tbody//child::tr//td[@class='day']")).click();
 		 
 		 driver.findElement(By.xpath("//textarea[@id='comments']")).sendKeys("Payment update");
 		 
@@ -516,20 +510,12 @@ public class mycollection extends TestBase {
 		 driver.findElement(By.xpath("//input[@id='fees_charges']")).sendKeys(FeesCharges);
 		Sleep(1000);
 		 driver.findElement(By.xpath("//option[contains(text(),'"+DisbursementType+"')]")).click();
- //WebElement DisbursementType= driver.findElement(By.xpath("//select[@id='disbursement_type']"));
-		 
-		// Select dropdown3 = new Select(CollectionStatus);
-		 //dropdown1.selectByValue("Voters Roll");
-		 
 		 driver.findElement(By.xpath("//input[@id='disbursement_amount']")).sendKeys(DisbursementAmount);
 		 driver.findElement(By.xpath("//label[contains(text(),'Browse files')]")).click();
-		 
-		 
 		 Robot robot = new Robot();
 	   		
 	   		Sleep(4000);
 	   		
-	   		Sleep(1000);
 	   		robot.keyPress(KeyEvent.VK_S);
 	   		Sleep(1000);
 	   		robot.keyPress(KeyEvent.VK_A);
@@ -550,12 +536,7 @@ public class mycollection extends TestBase {
 	   		Sleep(1000);
 	   	 new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Confirm')]"))).isDisplayed();
 	   		driver.findElement(By.xpath("//a[contains(text(),'Confirm')]")).click();
-	   	
-	   		
-
-		
-		
-		
+	 
 		
 	}
 	catch(Exception e) {
