@@ -5,7 +5,7 @@
     <classes>
       <class name="com.nucleus.qa.testcases.LoginPageTest">
         <methods>
-          <include name="TestCase2"/>
+          <include name="TestCase1"/>
           <include name="tearDown"/>
           <include name="Exit"/>
           <include name="start"/>

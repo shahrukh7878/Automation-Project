@@ -196,7 +196,7 @@ public class LoginPageTest extends TestBase {
 		System.out.println("-------------"+response.getStatusLine());
 		System.out.println("-------------"+response.getHeader("content-type"));
 		System.out.println("-------------"+response.getTime()+" Seconds");*/
-
+		
 		
 		initialization();
 	    loginPage = new LoginPage();
@@ -315,7 +315,7 @@ public class LoginPageTest extends TestBase {
 		ArrayList data=d.getData("TestCase1",path);
 		System.out.println(path);
 		String url = (String) data.get(2);
-		driver.get(url);
+		
 		String Username= (String) data.get(3);
 		String Password= (String) data.get(4);
 		String CompanyName=(String) data.get(5);
@@ -342,6 +342,74 @@ public class LoginPageTest extends TestBase {
 		String Name = (String) data.get(29);
 		
 	
+        driver.get("https://myfunding.ncf-sandbox.com/deleteCompanyData/09448371");
+	
+		driver.get("https://nucleus--qa.sandbox.my.salesforce.com/");
+		
+		driver.findElement(By.xpath("//input[@id='username']")).sendKeys("shahrukh.aatar@mypulse.io.qa");
+		
+		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Hasanw@123456");
+		
+		driver.findElement(By.xpath("//input[@id='Login']")).click();
+		Sleep(3000);
+		
+		//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@title='User']"))).isDisplayed();
+		// new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//td[contains(text(),'"+CWID+"')]"))).isDisplayed();
+		//driver.findElement(By.xpath("//img[@title='User']")).click();
+		//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Switch to Salesforce Classic')]"))).isDisplayed();
+		//driver.findElement(By.xpath("//a[contains(text(),'Switch to Salesforce Classic')]")).click();
+		
+		//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Leads')]"))).isDisplayed();
+		//driver.findElement(By.xpath("//a[contains(text(),'Leads')]")).click();
+		
+		//Sleep(5000);
+		
+		//System.out.println("click on serch111111111111111111");
+		//Sleep(5000);
+		//driver.findElement(By.xpath("//input[@id='phSearchInput']")).sendKeys(CompanyName);
+		//System.out.println("click on serch222222222222222222222222222");
+		//Sleep(5000);
+		//driver.findElement(By.xpath("//input[@id='phSearchButton']")).click();
+		
+		//Sleep(5000);
+		//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Leads')]"))).isDisplayed();
+		//driver.findElement(By.xpath("//a[contains(text(),'Leads')]")).click();
+		
+		//Sleep(5000);
+		//driver.findElement(By.xpath("//input[@id='phSearchInput']")).sendKeys(CompanyName);
+		//System.out.println("click on serch222222222222222222222222222");
+		//Sleep(5000);
+		//driver.findElement(By.xpath("//input[@id='phSearchButton']")).click();		
+		//System.out.println("click on serch23333333333333333333333333333333");
+		try {
+
+			for(int iCount=1;iCount<=100;iCount++) {
+				Sleep(3000);
+				driver.findElement(By.xpath("//input[@id='phSearchInput']")).sendKeys(CompanyName);
+				System.out.println("sendkeys111111111111111111");
+				//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'"+CompanyName+"')]"))).isDisplayed();
+				
+				new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='phSearchButton']"))).isDisplayed();
+				driver.findElement(By.xpath("//input[@id='phSearchButton']")).click();
+				System.out.println("click on serch111111111111111111");
+				
+				Sleep(3000);
+				System.out.println("inside for loop ");
+				driver.findElement(By.xpath("(//a[contains(text(),'"+CompanyName+"')])[1]")).click();
+				Sleep(3000);
+				driver.findElement(By.xpath("(//input[@value='Delete'])[1]")).click();
+				Sleep(3000);
+				driver.switchTo().alert().accept();
+				break;
+			}
+		
+		}
+		catch(Exception e) {
+			
+		}
+
+		driver.get(url);
+		
 		Screenshot();
 		WriteExtentReport =test1.createNode("Navigate to Application landing page");
 		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
@@ -358,7 +426,9 @@ public class LoginPageTest extends TestBase {
 		newproposalpage.SearchCompanyName(CompanyName);
 		newproposalpage.CompanyName(Name);
 		newproposalpage.PrimaryDirector();
+		
 		newproposalpage.EnterEmail(Email);
+		System.out.println("email enter 1");
 		newproposalpage.EnterPhoneNumberField(PhoneNumber);
 		newproposalpage.EnterBirthDay(BirthDay);
 		newproposalpage.EnterAddressManually();
@@ -388,7 +458,9 @@ public class LoginPageTest extends TestBase {
 		try{
 		DirectorInformation.EditDirectorDetails();
 		DirectorInformation.DateofBirth(BirthDay1);
+		Sleep(1000);
 		DirectorInformation.Email(Email1);
+		System.out.println("email enter 2");
 		Sleep(1000);
 		DirectorInformation.DirMobile(MobileNumber);
 		DirectorInformation.PersonalGuaranteeYes();
@@ -486,14 +558,12 @@ public class LoginPageTest extends TestBase {
 	}
 	}
 	
-	@Test (enabled=true)
+	@Test (enabled=false)
 	public void TestCase2() throws Exception {
 		 test1 = extent.createTest("Test Case2", "Single Dir OB AS");
 		try {
 		ArrayList data=d.getData("TestCase2",path);
 		String url = (String) data.get(2);
-		
-		
 		
 		String Username= (String) data.get(3);
 		String Password= (String) data.get(4);
@@ -525,6 +595,11 @@ public class LoginPageTest extends TestBase {
 		String Name = (String) data.get(29);
 		System.out.println("11111111111111111 Before 555555555555555555555555");
 		
+		
+		driver.get("https://myfunding.ncf-sandbox.com/deleteCompanyData/12225716");
+		 
+		
+		
 		driver.get("https://nucleus--qa.sandbox.my.salesforce.com/");
 		
 		driver.findElement(By.xpath("//input[@id='username']")).sendKeys("shahrukh.aatar@mypulse.io.qa");
@@ -532,51 +607,63 @@ public class LoginPageTest extends TestBase {
 		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Hasanw@123456");
 		
 		driver.findElement(By.xpath("//input[@id='Login']")).click();
-		Sleep(5000);
+		Sleep(3000);
 		
 		//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@title='User']"))).isDisplayed();
 		// new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//td[contains(text(),'"+CWID+"')]"))).isDisplayed();
 		//driver.findElement(By.xpath("//img[@title='User']")).click();
 		//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Switch to Salesforce Classic')]"))).isDisplayed();
 		//driver.findElement(By.xpath("//a[contains(text(),'Switch to Salesforce Classic')]")).click();
-		driver.findElement(By.xpath("//input[@id='phSearchInput']")).sendKeys(CompanyName);
-		System.out.println("sendkeys111111111111111111");
-		//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'"+CompanyName+"')]"))).isDisplayed();
 		
-		new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='phSearchButton']"))).isDisplayed();
-		driver.findElement(By.xpath("//input[@id='phSearchButton']")).click();
-		System.out.println("click on serch111111111111111111");
 		
-		new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Leads')]"))).isDisplayed();
-		driver.findElement(By.xpath("//a[contains(text(),'Leads')]")).click();
+		//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Leads')]"))).isDisplayed();
+		//driver.findElement(By.xpath("//a[contains(text(),'Leads')]")).click();
 		
-		Sleep(5000);
+		//Sleep(5000);
 		
-		System.out.println("click on serch111111111111111111");
-		Sleep(5000);
-		driver.findElement(By.xpath("//input[@id='phSearchInput']")).sendKeys(CompanyName);
-		System.out.println("click on serch222222222222222222222222222");
-		Sleep(5000);
-		driver.findElement(By.xpath("//input[@id='phSearchButton']")).click();
+		//System.out.println("click on serch111111111111111111");
+		//Sleep(5000);
+		//driver.findElement(By.xpath("//input[@id='phSearchInput']")).sendKeys(CompanyName);
+		//System.out.println("click on serch222222222222222222222222222");
+		//Sleep(5000);
+		//driver.findElement(By.xpath("//input[@id='phSearchButton']")).click();
 		
-		Sleep(5000);
-		/*new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Leads')]"))).isDisplayed();
-		driver.findElement(By.xpath("//a[contains(text(),'Leads')]")).click();
+		//Sleep(5000);
+		//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Leads')]"))).isDisplayed();
+		//driver.findElement(By.xpath("//a[contains(text(),'Leads')]")).click();
 		
-		Sleep(5000);
-		driver.findElement(By.xpath("//input[@id='phSearchInput']")).sendKeys(CompanyName);
-		System.out.println("click on serch222222222222222222222222222");
-		Sleep(5000);
-		driver.findElement(By.xpath("//input[@id='phSearchButton']")).click();		
-		System.out.println("click on serch23333333333333333333333333333333");*/
-		Sleep(5000);
-		driver.findElement(By.xpath("(//a[contains(text(),'"+CompanyName+"')])[1]")).click();
-		Sleep(5000);
-		driver.findElement(By.xpath("(//input[@value='Delete'])[1]")).click();
-		Sleep(5000);
-		driver.switchTo().alert().accept();
+		//Sleep(5000);
+		//driver.findElement(By.xpath("//input[@id='phSearchInput']")).sendKeys(CompanyName);
+		//System.out.println("click on serch222222222222222222222222222");
+		//Sleep(5000);
+		//driver.findElement(By.xpath("//input[@id='phSearchButton']")).click();		
+		//System.out.println("click on serch23333333333333333333333333333333");
+		try {
+
+			for(int iCount=1;iCount>=100;iCount++) {
+				driver.findElement(By.xpath("//input[@id='phSearchInput']")).sendKeys(CompanyName);
+				System.out.println("sendkeys111111111111111111");
+				//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'"+CompanyName+"')]"))).isDisplayed();
+				
+				new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='phSearchButton']"))).isDisplayed();
+				driver.findElement(By.xpath("//input[@id='phSearchButton']")).click();
+				System.out.println("click on serch111111111111111111");
+				Sleep(3000);
+				System.out.println("inside for loop ");
+				driver.findElement(By.xpath("(//a[contains(text(),'"+CompanyName+"')])[1]")).click();
+				Sleep(3000);
+				driver.findElement(By.xpath("(//input[@value='Delete'])[1]")).click();
+				Sleep(3000);
+				driver.switchTo().alert().accept();
+				
+			}
 		
-		//driver.get(url);
+		}
+		catch(Exception e) {
+			
+		}
+		
+		driver.get(url);
 		
 		Screenshot();
 		WriteExtentReport =test1.createNode("Navigate to Application landing page");
@@ -692,15 +779,13 @@ public class LoginPageTest extends TestBase {
 			if(switchToRightWindow("myPulse - Plaid Open Banking",hList1)){
 			      System.out.println(driver.getCurrentUrl() + ": " + driver.getTitle());
 			      }
+			Sleep(2000);
 			Screenshot();
 			WriteExtentReport =test1.createNode("Navigate myPulse Page ");
 			WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
 			myPulse.ClickOnGetStarted();
 			Sleep(1000);
-			Screenshot();
-			Sleep(2000);
-			WriteExtentReport =test1.createNode("Navigate Bank Page ");
-			WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+			
 			List<WebElement> Company = driver.findElements(By.xpath("//input[@name='CompanyName']"));
 			if (Company.size() > 0)
 			{
@@ -709,6 +794,10 @@ public class LoginPageTest extends TestBase {
 				myPulse.mobileNumber();
 				myPulse.ClickOnContinue1();
 			}
+			Screenshot();
+			Sleep(2000);
+			WriteExtentReport =test1.createNode("Navigate Bank Page ");
+			WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
 			Sleep(6000);
 			Robot robot = new Robot();
 			robot.keyPress(KeyEvent.VK_TAB);
@@ -717,6 +806,8 @@ public class LoginPageTest extends TestBase {
 			Sleep(2000);
 			myPulse.EnterBankName();
 			myPulse.ClickOnYourBank();
+			
+			
 			myPulse.ClickOnConsent();
 			Set<String> handles2 = driver.getWindowHandles();
 			List<String> hList2 = new ArrayList<String>(handles2);
@@ -742,25 +833,24 @@ public class LoginPageTest extends TestBase {
 	}
 	
 	catch(Exception e) {
-	
 		String Error = e.toString();
 		System.out.println(Error);
 		Screenshot();
 		WriteExtentReport =test1.createNode("Failed Page ");
 		WriteExtentReport.log(Status.FAIL, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+Error);
 	 }	
-	}
-	
-	
-	
-	@Test(enabled=false)
+	}	
+		
+		
+		
+		@Test(enabled=true)
 	public void TestCase3() throws Exception {
 		 test1 = extent.createTest("Test Case 3", "Single Dir/Shareholder OB Plaid");
 		try {
 			
 		ArrayList data=d.getData("TestCase3",path);
 		String url = (String) data.get(2);
-		driver.get(url);
+		
 		String Username= (String) data.get(3);
 		String Password= (String) data.get(4);
 		String CompanyName=(String) data.get(5);
@@ -785,6 +875,75 @@ public class LoginPageTest extends TestBase {
 		String BankType = (String) data.get(24);
 		String Name = (String) data.get(29);
 		
+		 driver.get("https://myfunding.ncf-sandbox.com/deleteCompanyData/13483988");
+			
+			driver.get("https://nucleus--qa.sandbox.my.salesforce.com/");
+			
+			driver.findElement(By.xpath("//input[@id='username']")).sendKeys("shahrukh.aatar@mypulse.io.qa");
+			
+			driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Hasanw@123456");
+			
+			driver.findElement(By.xpath("//input[@id='Login']")).click();
+			Sleep(3000);
+			
+			//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@title='User']"))).isDisplayed();
+			// new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//td[contains(text(),'"+CWID+"')]"))).isDisplayed();
+			//driver.findElement(By.xpath("//img[@title='User']")).click();
+			//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Switch to Salesforce Classic')]"))).isDisplayed();
+			//driver.findElement(By.xpath("//a[contains(text(),'Switch to Salesforce Classic')]")).click();
+			
+			//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Leads')]"))).isDisplayed();
+			//driver.findElement(By.xpath("//a[contains(text(),'Leads')]")).click();
+			
+			//Sleep(5000);
+			
+			//System.out.println("click on serch111111111111111111");
+			//Sleep(5000);
+			//driver.findElement(By.xpath("//input[@id='phSearchInput']")).sendKeys(CompanyName);
+			//System.out.println("click on serch222222222222222222222222222");
+			//Sleep(5000);
+			//driver.findElement(By.xpath("//input[@id='phSearchButton']")).click();
+			
+			//Sleep(5000);
+			//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Leads')]"))).isDisplayed();
+			//driver.findElement(By.xpath("//a[contains(text(),'Leads')]")).click();
+			
+			//Sleep(5000);
+			//driver.findElement(By.xpath("//input[@id='phSearchInput']")).sendKeys(CompanyName);
+			//System.out.println("click on serch222222222222222222222222222");
+			//Sleep(5000);
+			//driver.findElement(By.xpath("//input[@id='phSearchButton']")).click();		
+			//System.out.println("click on serch23333333333333333333333333333333");
+			try {
+
+				for(int iCount=1;iCount<=100;iCount++) {
+					Sleep(3000);
+					driver.findElement(By.xpath("//input[@id='phSearchInput']")).sendKeys(CompanyName);
+					System.out.println("sendkeys111111111111111111");
+					//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'"+CompanyName+"')]"))).isDisplayed();
+					
+					new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='phSearchButton']"))).isDisplayed();
+					driver.findElement(By.xpath("//input[@id='phSearchButton']")).click();
+					System.out.println("click on serch111111111111111111");
+					
+					Sleep(3000);
+					System.out.println("inside for loop ");
+					driver.findElement(By.xpath("(//a[contains(text(),'"+CompanyName+"')])[1]")).click();
+					Sleep(3000);
+					driver.findElement(By.xpath("(//input[@value='Delete'])[1]")).click();
+					Sleep(3000);
+					driver.switchTo().alert().accept();
+					//break;
+				}
+			
+			}
+			catch(Exception e) {
+				
+			}
+
+
+			driver.get(url);
+			
 		Screenshot();
 		WriteExtentReport =test1.createNode("Navigate to Application landing page");
 		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
@@ -943,7 +1102,8 @@ public class LoginPageTest extends TestBase {
 		 test1 = extent.createTest("Test Case 4", "Multiple Dir/Shareholder");
 		
 		try {
-				
+	
+			
 		ArrayList data=d.getData("TestCase4",path);
 		String url = (String) data.get(2);
 		driver.get(url);
@@ -1128,7 +1288,7 @@ public class LoginPageTest extends TestBase {
 	}
 	}
 	
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void TestCase5() throws Exception  {
 		
 		
@@ -1139,7 +1299,7 @@ public class LoginPageTest extends TestBase {
 				
 		ArrayList data=d.getData("TestCase5",path);
 		String url = (String) data.get(2);
-		driver.get(url);
+		
 		String Username= (String) data.get(3);
 		String Password= (String) data.get(4);
 		String CompanyName=(String) data.get(5);
@@ -1167,6 +1327,75 @@ public class LoginPageTest extends TestBase {
 		String Email3 = (String) data.get(27);
 		String MobileNumber2 = (String) data.get(28);
 		String Name = (String) data.get(29);
+		
+		
+		
+		 driver.get("https://myfunding.ncf-sandbox.com/deleteCompanyData/13483988");
+			
+			driver.get("https://nucleus--qa.sandbox.my.salesforce.com/");
+			
+			driver.findElement(By.xpath("//input[@id='username']")).sendKeys("shahrukh.aatar@mypulse.io.qa");
+			
+			driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Hasanw@123456");
+			
+			driver.findElement(By.xpath("//input[@id='Login']")).click();
+			Sleep(3000);
+			
+			//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@title='User']"))).isDisplayed();
+			// new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//td[contains(text(),'"+CWID+"')]"))).isDisplayed();
+			//driver.findElement(By.xpath("//img[@title='User']")).click();
+			//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Switch to Salesforce Classic')]"))).isDisplayed();
+			//driver.findElement(By.xpath("//a[contains(text(),'Switch to Salesforce Classic')]")).click();
+			
+			//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Leads')]"))).isDisplayed();
+			//driver.findElement(By.xpath("//a[contains(text(),'Leads')]")).click();
+			
+			//Sleep(5000);
+			
+			//System.out.println("click on serch111111111111111111");
+			//Sleep(5000);
+			//driver.findElement(By.xpath("//input[@id='phSearchInput']")).sendKeys(CompanyName);
+			//System.out.println("click on serch222222222222222222222222222");
+			//Sleep(5000);
+			//driver.findElement(By.xpath("//input[@id='phSearchButton']")).click();
+			
+			//Sleep(5000);
+			//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Leads')]"))).isDisplayed();
+			//driver.findElement(By.xpath("//a[contains(text(),'Leads')]")).click();
+			
+			//Sleep(5000);
+			//driver.findElement(By.xpath("//input[@id='phSearchInput']")).sendKeys(CompanyName);
+			//System.out.println("click on serch222222222222222222222222222");
+			//Sleep(5000);
+			//driver.findElement(By.xpath("//input[@id='phSearchButton']")).click();		
+			//System.out.println("click on serch23333333333333333333333333333333");
+			try {
+
+				for(int iCount=1;iCount<=100;iCount++) {
+					Sleep(3000);
+					driver.findElement(By.xpath("//input[@id='phSearchInput']")).sendKeys(CompanyName);
+					System.out.println("sendkeys111111111111111111");
+					//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'"+CompanyName+"')]"))).isDisplayed();
+					
+					new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='phSearchButton']"))).isDisplayed();
+					driver.findElement(By.xpath("//input[@id='phSearchButton']")).click();
+					System.out.println("click on serch111111111111111111");
+					
+					Sleep(3000);
+					System.out.println("inside for loop ");
+					driver.findElement(By.xpath("(//a[contains(text(),'"+CompanyName+"')])[1]")).click();
+					Sleep(3000);
+					driver.findElement(By.xpath("(//input[@value='Delete'])[1]")).click();
+					Sleep(3000);
+					driver.switchTo().alert().accept();
+					break;
+				}
+			
+			}
+			catch(Exception e) {
+				
+			}
+			driver.get(url);
 		
 		Screenshot();
 		WriteExtentReport =test1.createNode("Navigate to Application landing page");
@@ -1268,7 +1497,7 @@ public class LoginPageTest extends TestBase {
 		
 	}
 	}
-
+	
 	
 	@Test(enabled=false)
 	public void TestCase6() throws Exception  {

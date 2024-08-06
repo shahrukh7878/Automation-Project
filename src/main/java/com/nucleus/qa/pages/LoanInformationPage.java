@@ -53,6 +53,10 @@ public LoanInformationPage() {
 	 NucleusBusinessLoan.click();
  }
  
+ public void RevenueBasedLoan() {
+	 RevenueBasedLoan.click();
+ }
+ 
  public  void SelectPurposeFunding() {
 	 Select dropdown = new Select(PurposeFunding); 
 	 dropdown.selectByValue("Research & Development activities"); 
