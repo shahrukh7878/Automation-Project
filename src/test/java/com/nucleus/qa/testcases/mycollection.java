@@ -34,7 +34,6 @@ public class mycollection extends TestBase {
 	
 	mycollectionLoginPage mycollectionLogin;
 	
-	
 	ExtentReports extent;
 	String Datepath;
 	String FilePath;
@@ -88,7 +87,7 @@ public class mycollection extends TestBase {
 	@Test(enabled=true)
 	public void TestCase1() throws Exception  {
 		
-		 test1 = extent.createTest("Test Case 1", "OutSide Risk Criteria");
+		 test1 = extent.createTest("Test Case 1", "Posting Deals");
 	
 		try {
 		ArrayList data=d.getData("TestCase1", path);
@@ -143,32 +142,29 @@ public class mycollection extends TestBase {
 		// ((//table[@class='bounpost']//child::tbody//child::tr)[3]//child::td)[10]
 		 String Expected1=driver.findElement(By.xpath("((//table[@class='bounpost']//child::tbody//child::tr)[3]//child::td)[10]")).getText();
 		 
+		 System.out.println("56565655656556565565655655665");
+		 
+		 
 		//String Expected1 = Expected.getAttribute("value");
-		System.out.println(Expected1);
+		 
+		String[] parts = Expected1.split("\\£");
+		 //double d = parts;
+		  //String v = String.valueOf(parts).replace(".", "");
+		 //int val = Integer.parseInt(v);
+		 //System.out.println(val);
+		//System.out.println(val);
 		
-		
-		
-		
-		   
 		       
 		        // Split the string on the dollar sign
-		        String[] parts = Expected1.split("\\£");
 		        
 		        // The first part will be empty because the string starts with the dollar sign
 		        // The second part will be the number
-		        String number = parts[1];
+		       String number = parts[1];
 		        
 		        // Split the number part on the decimal point
-		      //  String[] numberParts = number.split("\\.");
-		        
-		        
+		        String[] numberParts = number.split("\\.");
 		        
 		        System.out.println("Dollars: " + number);
-		       
-		 
-
-		
-		
 		 driver.findElement(By.xpath("//a[contains(text(),'Posting Deals')]")).click();
 		 Sleep(3000);
 		
@@ -206,13 +202,13 @@ public class mycollection extends TestBase {
 	
 	
 
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void TestCase2() throws Exception  {
 		
 		 test1 = extent.createTest("Test Case 2", "Post Manual Payment");
 	
 		try {
-				
+		
 		ArrayList data=d.getData("TestCase2", path);
 		
 		System.out.println(path);
@@ -241,7 +237,6 @@ public class mycollection extends TestBase {
 		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
 		
 		mycollectionLogin.login(Username,Password);
-		
 		Sleep(2000);
 		Screenshot();
 		WriteExtentReport =test1.createNode("Navigate to Home Page");
@@ -366,7 +361,7 @@ public class mycollection extends TestBase {
         }
 	}
 
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void TestCase3() throws Exception  {
 		
 		 test1 = extent.createTest("Test Case 3", "Post Manual Payment");

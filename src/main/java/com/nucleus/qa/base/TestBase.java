@@ -211,8 +211,7 @@ public class TestBase{
 				if(title.contains(windowTitle)) {
 					System.out.println("found the right window...");
 					return true;
-				}
-				 
+				}	 
 			 }
 			return false;
 		}

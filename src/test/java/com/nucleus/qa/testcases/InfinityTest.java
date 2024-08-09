@@ -44,7 +44,7 @@ public class InfinityTest extends TestBase{
 	String path = "C:\\Users\\ShahrukhAatar\\Documents\\TestDataInfinity.xls";
 	
 	@BeforeSuite
-	public void start() {
+	public void start() { 
 		 
 		
 		String  path2 = System.getProperty("user.dir")+ "\\reports\\Infinity.html";

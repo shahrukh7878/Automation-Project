@@ -281,22 +281,15 @@ public class LoginPageTest extends TestBase {
 		{
 			Framework.CreateResults(false, sErrorLog);
 		}
-		
 		//driver.get("https://myfunding.ncf-sandbox.com/");
-	
 	   }
-	
 	catch(Exception e) {
-		
 		//File DestFile=new File(sScreenshotFilePath);
-		
 		String Error = e.toString();
 		test1.fail("Error Message" +Error );
-		
 		Screenshot();
 		//String screenshotPath = TestBase.Screenshot();
         test1.fail("Test Case failed check screenshot below"+test1.addScreenCaptureFromPath(sScreenshotFilePath));
-	
 	}
 	}*/
 	
@@ -306,16 +299,13 @@ public class LoginPageTest extends TestBase {
 		
 		
 		 test1 = extent.createTest("Test Case 1", "NucleusTestCase ");
-		
-
 		try {
 			
 			//Api.API_01();
-				
+	
 		ArrayList data=d.getData("TestCase1",path);
 		System.out.println(path);
 		String url = (String) data.get(2);
-		
 		String Username= (String) data.get(3);
 		String Password= (String) data.get(4);
 		String CompanyName=(String) data.get(5);
@@ -514,8 +504,6 @@ public class LoginPageTest extends TestBase {
 			WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
 			Office.ClickonCompleteyourOpenBanking();
 			
-			
-			
 			Sleep(6000);
 			Set<String> handles1 = driver.getWindowHandles();
 			List<String> hList1 = new ArrayList<String>(handles1);
@@ -545,18 +533,15 @@ public class LoginPageTest extends TestBase {
 			Sleep(2000);
 			WriteExtentReport =test1.createNode("Navigate Congratulations Page ");
 			WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
-	}
+	   }
 	
 	catch(Exception e) {
-	
 		String Error = e.toString();
 		Screenshot();
 		WriteExtentReport =test1.createNode("Failed Page ");
 		WriteExtentReport.log(Status.FAIL, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+Error);
-
-		
-	}
-	}
+	  }
+	  }
 	
 	@Test (enabled=false)
 	public void TestCase2() throws Exception {
@@ -594,12 +579,9 @@ public class LoginPageTest extends TestBase {
 		String MobileNumber2 = (String) data.get(28);
 		String Name = (String) data.get(29);
 		System.out.println("11111111111111111 Before 555555555555555555555555");
-		
-		
+
 		driver.get("https://myfunding.ncf-sandbox.com/deleteCompanyData/12225716");
 		 
-		
-		
 		driver.get("https://nucleus--qa.sandbox.my.salesforce.com/");
 		
 		driver.findElement(By.xpath("//input[@id='username']")).sendKeys("shahrukh.aatar@mypulse.io.qa");
@@ -614,13 +596,9 @@ public class LoginPageTest extends TestBase {
 		//driver.findElement(By.xpath("//img[@title='User']")).click();
 		//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Switch to Salesforce Classic')]"))).isDisplayed();
 		//driver.findElement(By.xpath("//a[contains(text(),'Switch to Salesforce Classic')]")).click();
-		
-		
 		//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Leads')]"))).isDisplayed();
 		//driver.findElement(By.xpath("//a[contains(text(),'Leads')]")).click();
-		
 		//Sleep(5000);
-		
 		//System.out.println("click on serch111111111111111111");
 		//Sleep(5000);
 		//driver.findElement(By.xpath("//input[@id='phSearchInput']")).sendKeys(CompanyName);
@@ -639,12 +617,10 @@ public class LoginPageTest extends TestBase {
 		//driver.findElement(By.xpath("//input[@id='phSearchButton']")).click();		
 		//System.out.println("click on serch23333333333333333333333333333333");
 		try {
-
 			for(int iCount=1;iCount>=100;iCount++) {
 				driver.findElement(By.xpath("//input[@id='phSearchInput']")).sendKeys(CompanyName);
 				System.out.println("sendkeys111111111111111111");
 				//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'"+CompanyName+"')]"))).isDisplayed();
-				
 				new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='phSearchButton']"))).isDisplayed();
 				driver.findElement(By.xpath("//input[@id='phSearchButton']")).click();
 				System.out.println("click on serch111111111111111111");
@@ -655,7 +631,6 @@ public class LoginPageTest extends TestBase {
 				driver.findElement(By.xpath("(//input[@value='Delete'])[1]")).click();
 				Sleep(3000);
 				driver.switchTo().alert().accept();
-				
 			}
 		
 		}
@@ -806,8 +781,6 @@ public class LoginPageTest extends TestBase {
 			Sleep(2000);
 			myPulse.EnterBankName();
 			myPulse.ClickOnYourBank();
-			
-			
 			myPulse.ClickOnConsent();
 			Set<String> handles2 = driver.getWindowHandles();
 			List<String> hList2 = new ArrayList<String>(handles2);
@@ -839,18 +812,14 @@ public class LoginPageTest extends TestBase {
 		WriteExtentReport =test1.createNode("Failed Page ");
 		WriteExtentReport.log(Status.FAIL, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+Error);
 	 }	
-	}	
-		
-		
-		
-		@Test(enabled=true)
+	}		
+		@Test(enabled=false)
 	public void TestCase3() throws Exception {
 		 test1 = extent.createTest("Test Case 3", "Single Dir/Shareholder OB Plaid");
 		try {
 			
 		ArrayList data=d.getData("TestCase3",path);
 		String url = (String) data.get(2);
-		
 		String Username= (String) data.get(3);
 		String Password= (String) data.get(4);
 		String CompanyName=(String) data.get(5);
@@ -875,10 +844,10 @@ public class LoginPageTest extends TestBase {
 		String BankType = (String) data.get(24);
 		String Name = (String) data.get(29);
 		
-		 driver.get("https://myfunding.ncf-sandbox.com/deleteCompanyData/13483988");
-			
+		    driver.get("https://myfunding.ncf-sandbox.com/deleteCompanyData/13483988");
+		    
 			driver.get("https://nucleus--qa.sandbox.my.salesforce.com/");
-			
+		
 			driver.findElement(By.xpath("//input[@id='username']")).sendKeys("shahrukh.aatar@mypulse.io.qa");
 			
 			driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Hasanw@123456");
@@ -921,11 +890,10 @@ public class LoginPageTest extends TestBase {
 					driver.findElement(By.xpath("//input[@id='phSearchInput']")).sendKeys(CompanyName);
 					System.out.println("sendkeys111111111111111111");
 					//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'"+CompanyName+"')]"))).isDisplayed();
-					
+				
 					new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='phSearchButton']"))).isDisplayed();
 					driver.findElement(By.xpath("//input[@id='phSearchButton']")).click();
 					System.out.println("click on serch111111111111111111");
-					
 					Sleep(3000);
 					System.out.println("inside for loop ");
 					driver.findElement(By.xpath("(//a[contains(text(),'"+CompanyName+"')])[1]")).click();
@@ -935,13 +903,10 @@ public class LoginPageTest extends TestBase {
 					driver.switchTo().alert().accept();
 					//break;
 				}
-			
+
 			}
 			catch(Exception e) {
-				
 			}
-
-
 			driver.get(url);
 			
 		Screenshot();
@@ -989,7 +954,6 @@ public class LoginPageTest extends TestBase {
 		WriteExtentReport =test1.createNode("Navigate Director Information Page ");
 		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
 		Sleep(2000);
-		
 		/*DirectorInformation.EditDirectorDetails();
 		System.out.println("111111111111111111111111111111111111111111");
 		//ShareholderDetails.ClickOnShareholderDetails();
@@ -1003,8 +967,6 @@ public class LoginPageTest extends TestBase {
 		ShareholderDetails.ClickonFindAddress();
 		ShareholderDetails.SelectAddress();
 		ShareholderDetails.ClickOnSubmit();*/
-		
-		
 		DirectorInformation.EditDirectorDetails();
 		Sleep(5000);
 		//DirectorInformation.DateofBirth(BirthDay1);
@@ -1102,8 +1064,6 @@ public class LoginPageTest extends TestBase {
 		 test1 = extent.createTest("Test Case 4", "Multiple Dir/Shareholder");
 		
 		try {
-	
-			
 		ArrayList data=d.getData("TestCase4",path);
 		String url = (String) data.get(2);
 		driver.get(url);
@@ -1288,7 +1248,7 @@ public class LoginPageTest extends TestBase {
 	}
 	}
 	
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void TestCase5() throws Exception  {
 		
 		
@@ -1947,13 +1907,11 @@ public class LoginPageTest extends TestBase {
 	
 	
 
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void TestCase10() throws Exception  {
-		
 		
 		 test1 = extent.createTest("Test Case 10", "OutSide Risk Criteria");
 		try {
-				
 		ArrayList data=d.getData("TestCase10",path);
 		String url = (String) data.get(2);
 		driver.get(url);
@@ -2001,70 +1959,51 @@ public class LoginPageTest extends TestBase {
 		newproposalpage.SearchCompanyName(CompanyName);
 		newproposalpage.CompanyName(Name);
 		//newproposalpage.PrimaryDirector();
-		
-		
-		
-		
 		new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//p[@id='popmsg']"))).isDisplayed();
 		Sleep(3000);
-		
 		String Message = driver.findElement(By.xpath("//p[@id='popmsg']")).getText();
 		String[] myArray = Message.split(",");
-		
 		String part1 = myArray[0];
 		String part2 = myArray[1];
 		System.out.println(part1);
 		System.out.println(part2);
 		String Array = part2;
 		String[] myArray1 = Array.split("\\.");
-		
 		String Text = myArray1[0];
 		String Text1 = myArray1[1];
 		Screenshot(); 
 		WriteExtentReport =test1.createNode("Navigate OutSide Risk Criteria Pop-Up");
 		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
-		
 		new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[contains(text(),'OK')])[3]"))).isDisplayed();
-		
 		driver.findElement(By.xpath("(//a[contains(text(),'OK')])[3]")).click();
-		
 		System.out.println("999999999999999999"+Text);
 	//	System.out.println(Text1);
 		
 		String str2 = Text;
-	String str1 ="we cannot support GROOVE ASSOCIATES LIMITED at this time as the Customer is Outside our Risk Criteria due to a previous application";
+	    String str1 ="we cannot support GROOVE ASSOCIATES LIMITED at this time as the Customer is Outside our Risk Criteria due to a previous application";
 	/*	if(str2.equalsIgnoreCase(str1)) {
-			
 			Sleep(1000000);
 			System.out.println("1010101666666666666666666665555555555555555");
-			
 		}
 		else
 		{
 			System.out.println("1010101666666666666666666665555555555555555");
 		}*/
-	
 		Screenshot();
 		WriteExtentReport =test1.createNode("Navigate  NewProposal Page");
 		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
 		
-	}
-	
+	   }
 	catch(Exception e) {
-	
 		String Error = e.toString();
 		System.out.println(Error);
 		Screenshot();
 		WriteExtentReport =test1.createNode("Failed Page ");
 		WriteExtentReport.log(Status.FAIL, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+Error);
 
-		
 	}
 	}
 
-	
-	
-	
 	
 	@Test(enabled=false)
 	public void TestCase9() throws Exception  {
@@ -2352,8 +2291,6 @@ public class LoginPageTest extends TestBase {
 		Screenshot();
 		WriteExtentReport =test1.createNode("Navigate Documents Page ");
 		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
-		
-		
 		Documents.SelectAccountingPackage();
 		Sleep(3000);
 		Documents.ClickOnDirector();
@@ -2365,22 +2302,16 @@ public class LoginPageTest extends TestBase {
 		Sleep(3000);
 		Documents.ClickOnOk();
 		Documents.SubmitButton();
-		
-		
 		//test1.log(Status.PASS, "Documents Page");
 		driver.get(url1);
 		Sleep(6000);
 		Set<String> handles3 = driver.getWindowHandles();
 		List<String> hList3 = new ArrayList<String>(handles3);
 		if(switchToRightWindow("Mail - Shahrukh Aatar - Outlook",hList3)){
-			
-			
 		      System.out.println(driver.getCurrentUrl() + ": " + driver.getTitle());
 		      }
 		    Office.ClickOnPulse();
 			Office.SelectFirstEmail();
-			
-			
 			//test1.log(Status.PASS, "Office Page");
 			Sleep(6000);
 			Screenshot();
@@ -2405,11 +2336,9 @@ public class LoginPageTest extends TestBase {
 			if(switchToRightWindow("myPulse - Plaid Open Banking",hList1)){
 			      System.out.println(driver.getCurrentUrl() + ": " + driver.getTitle());
 			      }
-			
 			Screenshot();
 			WriteExtentReport =test1.createNode("Navigate myPulse Page ");
 			WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
-			
 			driver.switchTo().frame(0);
 		    myPulse.ClickOnContinue();
 		    myPulse.ClickOnBank();
@@ -2452,15 +2381,11 @@ public class LoginPageTest extends TestBase {
 		Screenshot();
 		WriteExtentReport =test1.createNode("Failed Page ");
 		WriteExtentReport.log(Status.FAIL, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+Error);
-		
-		
 		//Screenshot();
 		// test1.fail("Test Case failed check screenshot below"+test1.addScreenCaptureFromPath(sScreenshotFilePath));
 		// test1.log(Status.FAIL, test1.addScreenCaptureFromPath(sScreenshotFilePath)+Error);
 		//String screenshotPath = TestBase.Screenshot();
-       //test1.fail("Test Case failed check screenshot below"+test1.addScreenCaptureFromPath(screenshotPath));
-		
-		
+       //test1.fail("Test Case failed check screenshot below"+test1.addScreenCaptureFromPath(screenshotPath));	
 	}
 		
 		
