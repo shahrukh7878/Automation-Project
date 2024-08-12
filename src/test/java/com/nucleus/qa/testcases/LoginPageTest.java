@@ -294,7 +294,7 @@ public class LoginPageTest extends TestBase {
 	}*/
 	
 	
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void TestCase1() throws Exception  {
 		
 		
@@ -332,7 +332,7 @@ public class LoginPageTest extends TestBase {
 		String Name = (String) data.get(29);
 		
 	
-        driver.get("https://myfunding.ncf-sandbox.com/deleteCompanyData/09448371");
+        driver.get("https://myfunding.ncf-sandbox.com/deleteCompanyData/151439");
 	
 		driver.get("https://nucleus--qa.sandbox.my.salesforce.com/");
 		
@@ -1907,7 +1907,7 @@ public class LoginPageTest extends TestBase {
 	
 	
 
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void TestCase10() throws Exception  {
 		
 		 test1 = extent.createTest("Test Case 10", "OutSide Risk Criteria");
