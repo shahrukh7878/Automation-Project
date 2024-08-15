@@ -2,28 +2,28 @@
 <testng-results ignored="9" total="10" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-13T19:48:43 IST" name="Default suite" finished-at="2024-08-13T19:50:41 IST" duration-ms="118443">
+  <suite started-at="2024-08-14T17:13:47 IST" name="Default suite" finished-at="2024-08-14T17:14:22 IST" duration-ms="35650">
     <groups>
     </groups>
-    <test started-at="2024-08-13T19:48:43 IST" name="Default test" finished-at="2024-08-13T19:50:41 IST" duration-ms="118443">
+    <test started-at="2024-08-14T17:13:47 IST" name="Default test" finished-at="2024-08-14T17:14:22 IST" duration-ms="35650">
       <class name="com.nucleus.qa.testcases.CoreSystemTesting">
-        <test-method is-config="true" signature="start()[pri:0, instance:com.nucleus.qa.testcases.CoreSystemTesting@64a1923a]" started-at="2024-08-13T19:48:43 IST" name="start" finished-at="2024-08-13T19:48:43 IST" duration-ms="30" status="PASS">
+        <test-method is-config="true" signature="start()[pri:0, instance:com.nucleus.qa.testcases.CoreSystemTesting@64a1923a]" started-at="2024-08-14T17:13:47 IST" name="start" finished-at="2024-08-14T17:13:47 IST" duration-ms="16" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- start -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.nucleus.qa.testcases.CoreSystemTesting@64a1923a]" started-at="2024-08-13T19:48:43 IST" name="setUp" finished-at="2024-08-13T19:48:45 IST" duration-ms="1961" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.nucleus.qa.testcases.CoreSystemTesting@64a1923a]" started-at="2024-08-14T17:13:47 IST" name="setUp" finished-at="2024-08-14T17:13:49 IST" duration-ms="1866" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="TestCase5()[pri:0, instance:com.nucleus.qa.testcases.CoreSystemTesting@64a1923a]" started-at="2024-08-13T19:48:45 IST" name="TestCase5" finished-at="2024-08-13T19:50:41 IST" duration-ms="115932" status="PASS">
+        <test-method signature="TestCase1()[pri:0, instance:com.nucleus.qa.testcases.CoreSystemTesting@64a1923a]" started-at="2024-08-14T17:13:49 IST" name="TestCase1" finished-at="2024-08-14T17:14:22 IST" duration-ms="33300" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TestCase5 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.nucleus.qa.testcases.CoreSystemTesting@64a1923a]" started-at="2024-08-13T19:50:41 IST" name="tearDown" finished-at="2024-08-13T19:50:41 IST" duration-ms="512" status="PASS">
+        </test-method> <!-- TestCase1 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.nucleus.qa.testcases.CoreSystemTesting@64a1923a]" started-at="2024-08-14T17:14:22 IST" name="tearDown" finished-at="2024-08-14T17:14:22 IST" duration-ms="461" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="Exit()[pri:0, instance:com.nucleus.qa.testcases.CoreSystemTesting@64a1923a]" started-at="2024-08-13T19:50:41 IST" name="Exit" finished-at="2024-08-13T19:50:42 IST" duration-ms="271" status="PASS">
+        <test-method is-config="true" signature="Exit()[pri:0, instance:com.nucleus.qa.testcases.CoreSystemTesting@64a1923a]" started-at="2024-08-14T17:14:22 IST" name="Exit" finished-at="2024-08-14T17:14:23 IST" duration-ms="663" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Exit -->
