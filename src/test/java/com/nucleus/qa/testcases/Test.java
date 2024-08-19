@@ -8,7 +8,6 @@ import org.apache.commons.mail.SimpleEmail;
 public class Test {
 
 	public static void main(String[] args) throws EmailException {
-		
 		Email email = new SimpleEmail();
 		email.setHostName("smtp.googlemail.com");
 		email.setSmtpPort(587);
@@ -16,13 +15,10 @@ public class Test {
 		email.setSSLOnConnect(true);
 		email.setFrom("shahrukhaatar58@gmail.com");
 		email.setSubject("TestMail");
-		email.setMsg("This is a test mail ... :-)");
+		email.setMsg("This is a test mail ... :-)"); 
 		email.addTo("shahrukhaatar58@gmail.com");
 		email.send();
-		
 		System.out.println("1111111111111111");
-		
-
 	}
 
 }
