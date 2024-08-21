@@ -144,7 +144,11 @@ public class TestBase{
 		//String url =(String) data.get(1);
 		System.setProperty("webdriver.edge.driver", "C://Users//ShahrukhAatar//OneDrive - Nucleus Services Ltd//Downloads//edgedriver_win32//msedgedriver.exe");
 		driver = new EdgeDriver();
+		//WebDriver driver = new EdgeDriver();
+		
 		/*String browserName=prop.getProperty("browser");
+		 * 
+		 
 		
 		if(browserName.equals("edge")) {
 			System.setProperty("webdriver.edge.driver", "C://Users//ShahrukhAatar//Downloads//edgedriver_win64//msedgedriver.exe");

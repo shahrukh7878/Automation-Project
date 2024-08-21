@@ -605,7 +605,6 @@ public class LoginPageTest extends TestBase {
 		//System.out.println("click on serch222222222222222222222222222");
 		//Sleep(5000);
 		//driver.findElement(By.xpath("//input[@id='phSearchButton']")).click();
-		
 		//Sleep(5000);
 		//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Leads')]"))).isDisplayed();
 		//driver.findElement(By.xpath("//a[contains(text(),'Leads')]")).click();
@@ -682,7 +681,6 @@ public class LoginPageTest extends TestBase {
 		Sleep(1000);
 		driver.findElement(By.id("average_monthly_card_volume")).sendKeys("4000");
 		//LoanInfo.NucleusBusinessLoan();
-		
 		LoanInfo.FundingNeeded(Fund);
 		LoanInfo.LoanMonths(Months);
 		LoanInfo.SelectPurposeFunding();
@@ -2416,7 +2414,6 @@ public class LoginPageTest extends TestBase {
 	public void Exit() {
 		
 	extent.flush();
-	
 	
 	}
 	

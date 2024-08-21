@@ -749,7 +749,7 @@ public class CoreSystemTesting extends TestBase  {
 		
 		
 		
-		@Test(enabled=true)
+		@Test(enabled=false)
 		public void TestCase() throws Exception  {
 			
 			
@@ -760,21 +760,21 @@ public class CoreSystemTesting extends TestBase  {
 			driver.get("https://www.myfundingportal.co.uk/mynucleus");
 			
 			 new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='email']"))).isDisplayed();
-				new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='password']"))).isDisplayed();
-				new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Sign In')]"))).isDisplayed();
-				new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Sign Up')]"))).isDisplayed();
+			 new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='password']"))).isDisplayed();
+			 new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Sign In')]"))).isDisplayed();
+			 new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Sign Up')]"))).isDisplayed();
 				
-				driver.findElement(By.xpath("//input[@id='email']")).sendKeys("shahrukh.aatar@mypulse.io");
-				driver.findElement(By.xpath("//input[@id='password']")).sendKeys("brokerportal1");
-				driver.findElement(By.xpath("//button[contains(text(),'Sign In')]")).click();
+			 driver.findElement(By.xpath("//input[@id='email']")).sendKeys("shahrukh.aatar@mypulse.io");
+			 driver.findElement(By.xpath("//input[@id='password']")).sendKeys("brokerportal1");
+			 driver.findElement(By.xpath("//button[contains(text(),'Sign In')]")).click();
 				Sleep(2000);
-				driver.findElement(By.xpath("(//a[contains(text(),'OK')])[5]")).click();
+			 driver.findElement(By.xpath("(//a[contains(text(),'OK')])[5]")).click();
 				
-				new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Welcome to')]"))).isDisplayed();
-				new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'DASHBOARD')]"))).isDisplayed();
-			    new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),' NEW PROPOSAL')]"))).isDisplayed();
-				new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),' OPEN BANKING STATUS')]"))).isDisplayed();
-				new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),' OPEN ACCOUNTING STATUS')]"))).isDisplayed();
+			 new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Welcome to')]"))).isDisplayed();
+			 new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'DASHBOARD')]"))).isDisplayed();
+			 new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),' NEW PROPOSAL')]"))).isDisplayed();
+			 new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),' OPEN BANKING STATUS')]"))).isDisplayed();
+			 new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),' OPEN ACCOUNTING STATUS')]"))).isDisplayed();
 			    new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),' PRODUCT SUPPORT')]"))).isDisplayed();
 				new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),' QUERIES')]"))).isDisplayed();
 				new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),' SIC Codes')]"))).isDisplayed();
@@ -789,12 +789,11 @@ public class CoreSystemTesting extends TestBase  {
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("window.scrollBy(0,600)");
 				      
-				      
-				      new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//h5[contains(text(),'All Deals By Quarter')]"))).isDisplayed();
-					  new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//h5[contains(text(),'All Deals By Product')]"))).isDisplayed();
-						new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//h5[contains(text(),'Paid Out Deals By Broker')]"))).isDisplayed();
+				new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//h5[contains(text(),'All Deals By Quarter')]"))).isDisplayed();
+			    new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//h5[contains(text(),'All Deals By Product')]"))).isDisplayed();
+			    new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//h5[contains(text(),'Paid Out Deals By Broker')]"))).isDisplayed();
 						
-						Sleep(2000);
+				Sleep(2000);
 						 Screenshot();
 						 WriteExtentReport =test1.createNode("Navigate to Application landing page1");
 						 WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
@@ -1598,138 +1597,61 @@ public class CoreSystemTesting extends TestBase  {
 
 		
 		
-		@Test(enabled=false)
+		@Test(enabled=true)
 		public void TestCase8() throws Exception  {
 			
 			
-			 test1 = extent.createTest("Test Case 8", "Send OB Link");
+			 test1 = extent.createTest("Test Case 8", "Pulse Portal");
 			
 			try {
+					driver.get("https://mypulse.io/login/");
 					
-			ArrayList data=d.getData("TestCase8",path);
-			String url = (String) data.get(2);
-			driver.get(url);
-			String Username= (String) data.get(3);
-			String Password= (String) data.get(4);
-			String CompanyName=(String) data.get(5);
-			String Email = (String) data.get(6);
-			String PhoneNumber = (String) data.get(7);
-			String BirthDay = (String) data.get(8);
-			String PostCode = (String) data.get(9);
-			String HouseNumber = (String) data.get(10);
-			String HouseName = (String) data.get(11);
-			String City = (String) data.get(12);
-			String Street = (String) data.get(13);
-			String Country = (String) data.get(14);
-			String Fund = (String) data.get(15);
-			String Months = (String) data.get(16);
-			String Percent = (String) data.get(17);
-			String BirthDay1= (String) data.get(18);
-			String Email1 = (String) data.get(19);
-			String MobileNumber = (String) data.get(20);
-			String PhoneNO = (String) data.get(21);
-			String url1 = (String) data.get(22);
-			String Bank = (String) data.get(23);
-			String BankType = (String) data.get(24);
-			String Email2 = (String) data.get(25);
-			String MobileNumber1 = (String) data.get(26);
-			String Email3 = (String) data.get(27);
-			String MobileNumber2 = (String) data.get(28);
-			String Name = (String) data.get(29);
+													
+															
+															
+	          new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Login ')]"))).isDisplayed();
+	          new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[contains(text(),'Login ')]//following::button)[1]"))).isDisplayed();
+	          new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@id='email'])[1]"))).isDisplayed();
+	          new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@id='password'])[1]"))).isDisplayed();
+	          new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@type='submit'])[1]"))).isDisplayed();
+	          new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@type='button'])[1]"))).isDisplayed();												
+		      System.out.println("passssssssssssssssssssssssssssssssss");
+		      driver.findElement(By.xpath("(//input[@id='email'])[1]")).sendKeys("anil.jain@nucleus-cf.co.uk");
+		      driver.findElement(By.xpath("(//input[@id='password'])[1]")).sendKeys("anil@123");
+		      driver.findElement(By.xpath("(//input[@type='submit'])[1]")).click();
+		      
+		      new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//h5[contains(text(),'Overview')]"))).isDisplayed();
+		      new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Number of clients')]"))).isDisplayed();
+		      new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[contains(text(),'Open Banking')])[1]"))).isDisplayed();
+		      new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[contains(text(),'Open Accounting')])[1]"))).isDisplayed();
+		      new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[contains(text(),'Pulse Insights sent')])[1]"))).isDisplayed();
+		      new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Add Client')]"))).isDisplayed();
+		      new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='defaultOpen']"))).isDisplayed();
+		      new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@id='defaultOpen']//following::button)[1]"))).isDisplayed();
+		      
+		   // //span[contains(text(),'Home')]
+		   // (//span[contains(text(),'Insights')])[1]
+		    		
+		    		
+			     
+		      
+		      
+			     
+		    
+			     
+		    
+		      
+		      
+			     
+		      
+			  
+		    
+		         
+		    
+		      
+		      Sleep(50000);
 			
-			Screenshot();
-			WriteExtentReport =test1.createNode("Navigate to Application landing page");
-			WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
-			loginPage.login(Username,Password);	
-			Screenshot();
-			WriteExtentReport = test1.createNode("Navigate to Home Page");
-			WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
-			Sleep(5000);
-			homePage.NewProposal();
-			Screenshot(); 
-			WriteExtentReport =test1.createNode("Navigate NewProposal Page ");
-			WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
-			newproposalpage.LimitedCompany();
-			newproposalpage.SearchCompanyName(CompanyName);
-			newproposalpage.CompanyName(Name);
-			newproposalpage.PrimaryDirector();
-			newproposalpage.EnterEmail(Email);
-			newproposalpage.EnterPhoneNumberField(PhoneNumber);
-			newproposalpage.EnterBirthDay(BirthDay);
-			newproposalpage.EnterAddressManually();
-			newproposalpage.EnterHouseNumber(HouseNumber);
-			newproposalpage.EnterHouseName(HouseName);
-			newproposalpage.EnterCity(City);
-			newproposalpage.EnterStreet(Street);
-			newproposalpage.EnterCountry(Country);
-			newproposalpage.SendPostCode(PostCode);
-			newproposalpage.SelectResidentialPropertyYes();
-			newproposalpage.BusinessAddressSelectYes();
-			newproposalpage.NextButton();
-			
-			new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'Nucleus Business Loan')]"))).isDisplayed();
-			
-			Screenshot(); 
-			WriteExtentReport =test1.createNode("Navigate Loan Information Page ");
-			WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
-			
-			LoanInfo.NucleusBusinessLoan();
-			LoanInfo.ConfirmAlert();
-			LoanInfo.FundingNeeded(Fund);
-			LoanInfo.LoanMonths(Months);
-			LoanInfo.SelectPurposeFunding();
-			LoanInfo.BrokerPercent(Percent);
-			LoanInfo.NextStep();
-			Sleep(3000);
-			Screenshot();
-			WriteExtentReport =test1.createNode("Navigate Director Information Page ");
-			WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
-			DirectorInformation.EditDirectorDetails();
-			//DirectorInformation.DateofBirth(BirthDay1);
-			DirectorInformation.Email(Email1);
-			Sleep(1000);
-			DirectorInformation.DirMobile(MobileNumber);
-			DirectorInformation.PersonalGuaranteeYes();
-			DirectorInformation.EnterPostCode(PostCode);
-			DirectorInformation.ClickonFindAddress();
-			Sleep(3000);
-			DirectorInformation.SelectAddress();
-			DirectorInformation.SelectResidentialPropertyYes();
-			DirectorInformation.ClickOnSubmit();
-			Sleep(1000);
-			DirectorInformation.ClickOnNext();
-			Sleep(6000);
-			Screenshot();
-			WriteExtentReport =test1.createNode("Navigate Director Information Page1 ");
-			WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
-			
-			Documents.SelectAccountingPackage();
-			Sleep(3000);
-			Documents.ClickOnDirector();
-			Documents.ClickOnOk();
-			Documents.SelectBank(Bank);
-			Documents.SelectBankAccountType(BankType);
-			System.out.println("9999999999999999999999999999999999999999");
-			Sleep(3000);
-			Documents.ClickOnDirector1();
-			Sleep(3000);
-			Documents.ClickOnOk();
-			Sleep(6000);
-			new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),' DASHBOARD')]"))).isDisplayed();	
-		    homePage.Dashboard();
-		    System.out.println("Dshaboardddddddddddddddddddddddddddddddddddddddd");
-		    new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Incomplete Proposals')]"))).isDisplayed();
-		    Screenshot(); 
-			WriteExtentReport =test1.createNode("Navigate Dashboard Page ");
-			WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
-			homePage.IncompleteProposals(CompanyName);
-			
-			Documents.SubmitButton();
-			Sleep(3000);
-			Screenshot();
-			WriteExtentReport =test1.createNode("Navigate Submission Page ");
-			WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
-		
+					
 		}
 		
 		catch(Exception e) {
