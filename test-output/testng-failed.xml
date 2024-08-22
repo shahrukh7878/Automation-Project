@@ -9,7 +9,7 @@
           <include name="Exit"/>
           <include name="start"/>
           <include name="setUp"/>
-          <include name="TestCase6"/>
+          <include name="TestCase11"/>
         </methods>
       </class> <!-- com.nucleus.qa.testcases.CoreSystemTesting -->
     </classes>
