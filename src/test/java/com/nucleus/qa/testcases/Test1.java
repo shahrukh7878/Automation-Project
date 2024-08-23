@@ -30,6 +30,9 @@ public class Test1 {
 		driver.findElement(By.xpath("//img[@alt='myCollection']")).isDisplayed();
 		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("shahrukh.aatar@mypulse.io");
 	
+		//Select select = new Select(element1);
+		
+		//select.selectByIndex(0)
 	}
 	}
 		

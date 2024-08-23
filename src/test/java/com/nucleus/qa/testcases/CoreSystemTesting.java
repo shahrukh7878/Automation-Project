@@ -253,11 +253,10 @@ public class CoreSystemTesting extends TestBase  {
 		
 		@Test(enabled=false)
 		public void TestCase1() throws Exception  {
-			
-			
 			 test1 = extent.createTest("Test Case 1", "Nucleus Website");
 
 			try{
+				
 	        driver.get("https://nucleuscommercialfinance.com/");
 	    
 	        new WebDriverWait(driver, 60).until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[contains(text(),'Apply Now')])[2]"))).isDisplayed();
@@ -751,10 +750,10 @@ public class CoreSystemTesting extends TestBase  {
 		
 		
 		@Test(enabled=false)
-		public void TestCase() throws Exception  {
+		public void TestCase5() throws Exception  {
 			
 			
-			 test1 = extent.createTest("Test Case 4", "MyNucleus Admin Portal");
+			 test1 = extent.createTest("Test Case 5", "MyNucleus Admin Portal");
 			
 			try {
 				System.out.println("admin login");
@@ -926,10 +925,10 @@ public class CoreSystemTesting extends TestBase  {
 		
 		
 		@Test(enabled=false)
-		public void TestCase5() throws Exception  {
+		public void TestCase6() throws Exception  {
 			
 			
-			 test1 = extent.createTest("Test Case 5", "MyAdmin Portal");
+			 test1 = extent.createTest("Test Case 6", "MyAdmin Portal");
 			
 
 			try {
@@ -1263,10 +1262,10 @@ public class CoreSystemTesting extends TestBase  {
 		
 		
 		@Test(enabled=false)
-		public void TestCase6() throws Exception  {
+		public void TestCase7() throws Exception  {
 			
 			
-			 test1 = extent.createTest("Test Case 6", "Infinity Portal Direct Role");
+			 test1 = extent.createTest("Test Case 7", "Infinity Portal Direct Role");
 			
 
 			try {
@@ -1434,10 +1433,10 @@ public class CoreSystemTesting extends TestBase  {
 		
 
 		@Test(enabled=false)
-		public void TestCase7() throws Exception  {
+		public void TestCase8() throws Exception  {
 			
 			
-			 test1 = extent.createTest("Test Case 7", "Infinity Portal Tele Role");
+			 test1 = extent.createTest("Test Case 8", "Infinity Portal Tele Role");
 			try {	
 				
 				driver.get("https://www.myfundingportal.co.uk/login");
@@ -1599,10 +1598,10 @@ public class CoreSystemTesting extends TestBase  {
 		
 		
 		@Test(enabled=false)
-		public void TestCase8() throws Exception  {
+		public void TestCase9() throws Exception  {
 			
 			
-			 test1 = extent.createTest("Test Case 8", "Infinity Portal Admin Direct Role");
+			 test1 = extent.createTest("Test Case 9", "Infinity Portal Admin Direct Role");
 			
 			try {
 					driver.get("https://www.myfundingportal.co.uk/login");
@@ -1906,10 +1905,10 @@ public class CoreSystemTesting extends TestBase  {
 
 		
 		@Test(enabled=false)
-		public void TestCase9() throws Exception  {
+		public void TestCase11() throws Exception  {
 			
 			
-			 test1 = extent.createTest("Test Case 9", "Mycollection");
+			 test1 = extent.createTest("Test Case 11", "Mycollection");
 			try {	
 	
 				driver.get("https://mycollection.myfundingportal.co.uk/login");
@@ -2061,8 +2060,8 @@ public class CoreSystemTesting extends TestBase  {
 		
 		
 		
-		@Test(enabled=true)
-		public void TestCase11() throws Exception  {
+		@Test(enabled=false)
+		public void TestCase12() throws Exception  {
 			
 			
 			 test1 = extent.createTest("Test Case 11", "MyReporting Portal");

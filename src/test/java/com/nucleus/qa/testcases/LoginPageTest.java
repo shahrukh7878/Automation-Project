@@ -301,8 +301,6 @@ public class LoginPageTest extends TestBase {
 		 test1 = extent.createTest("Test Case 1", "NucleusTestCase ");
 		try {
 			
-			//Api.API_01();
-	
 		ArrayList data=d.getData("TestCase1",path);
 		System.out.println(path);
 		String url = (String) data.get(2);
@@ -332,7 +330,7 @@ public class LoginPageTest extends TestBase {
 		String Name = (String) data.get(29);
 		
 	
-        driver.get("https://myfunding.ncf-sandbox.com/deleteCompanyData/151439");
+        driver.get("https://myfunding.ncf-sandbox.com/deleteCompanyData/01554169");
 	
 		driver.get("https://nucleus--qa.sandbox.my.salesforce.com/");
 		
@@ -378,11 +376,9 @@ public class LoginPageTest extends TestBase {
 				driver.findElement(By.xpath("//input[@id='phSearchInput']")).sendKeys(CompanyName);
 				System.out.println("sendkeys111111111111111111");
 				//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'"+CompanyName+"')]"))).isDisplayed();
-				
 				new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='phSearchButton']"))).isDisplayed();
 				driver.findElement(By.xpath("//input[@id='phSearchButton']")).click();
 				System.out.println("click on serch111111111111111111");
-				
 				Sleep(3000);
 				System.out.println("inside for loop ");
 				driver.findElement(By.xpath("(//a[contains(text(),'"+CompanyName+"')])[1]")).click();
@@ -416,7 +412,6 @@ public class LoginPageTest extends TestBase {
 		newproposalpage.SearchCompanyName(CompanyName);
 		newproposalpage.CompanyName(Name);
 		newproposalpage.PrimaryDirector();
-		
 		newproposalpage.EnterEmail(Email);
 		System.out.println("email enter 1");
 		newproposalpage.EnterPhoneNumberField(PhoneNumber);
@@ -466,28 +461,42 @@ public class LoginPageTest extends TestBase {
         }  
 		Sleep(3000);
 		DirectorInformation.ClickOnNext();
+		
 		Screenshot();
 		WriteExtentReport =test1.createNode("Navigate Documents Page ");
 		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
+		
+		Sleep(3000);
+		System.out.println("11111111111111111111");
 		Documents.SelectAccountingPackage();
+		System.out.println("11111111111111111111");
 		Sleep(3000);
 		Documents.ClickOnDirector();
+		System.out.println("11111111111111111111");
+
 		Documents.ClickOnOk();
 		Documents.SelectBank(Bank);
 		Documents.SelectBankAccountType(BankType);
 		Sleep(3000);
 		Documents.ClickOnDirector1();
+		System.out.println("11111111111111111111");
 		Sleep(3000);
 		Documents.ClickOnOk();
+		System.out.println("11111111111111111111");
 		Documents.SubmitButton();
+		System.out.println("11111111111111111111");
 		driver.get(url1);
+		System.out.println("11111111111111111111");
 		Sleep(6000);
 		Set<String> handles3 = driver.getWindowHandles();
 		List<String> hList3 = new ArrayList<String>(handles3);
 		if(switchToRightWindow("Mail - Shahrukh Aatar - Outlook",hList3)){
+			System.out.println("11111111111111111111");
 		      }
 		Office.ClickOnPulse();
+		System.out.println("11111111111111111111");
 		Office.SelectFirstEmail();
+		System.out.println("11111111111111111111");
 			Sleep(6000);
 			Screenshot();
 			WriteExtentReport =test1.createNode("Navigate Email Page ");
@@ -534,9 +543,9 @@ public class LoginPageTest extends TestBase {
 			WriteExtentReport =test1.createNode("Navigate Congratulations Page ");
 			WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");
 	   }
-	
 	catch(Exception e) {
 		String Error = e.toString();
+		System.out.println(Error);
 		Screenshot();
 		WriteExtentReport =test1.createNode("Failed Page ");
 		WriteExtentReport.log(Status.FAIL, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+Error);
@@ -578,7 +587,7 @@ public class LoginPageTest extends TestBase {
 		String Email3 = (String) data.get(27);
 		String MobileNumber2 = (String) data.get(28);
 		String Name = (String) data.get(29);
-		System.out.println("11111111111111111 Before 555555555555555555555555");
+		
 
 		driver.get("https://myfunding.ncf-sandbox.com/deleteCompanyData/12225716");
 		 
@@ -589,7 +598,6 @@ public class LoginPageTest extends TestBase {
 		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Hasanw@123456");
 		
 		driver.findElement(By.xpath("//input[@id='Login']")).click();
-		Sleep(3000);
 		
 		//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@title='User']"))).isDisplayed();
 		// new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//td[contains(text(),'"+CWID+"')]"))).isDisplayed();
@@ -615,8 +623,10 @@ public class LoginPageTest extends TestBase {
 		//Sleep(5000);
 		//driver.findElement(By.xpath("//input[@id='phSearchButton']")).click();		
 		//System.out.println("click on serch23333333333333333333333333333333");
+		
 		try {
 			for(int iCount=1;iCount>=100;iCount++) {
+				System.out.println("inside loop 11111111111111111");
 				driver.findElement(By.xpath("//input[@id='phSearchInput']")).sendKeys(CompanyName);
 				System.out.println("sendkeys111111111111111111");
 				//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'"+CompanyName+"')]"))).isDisplayed();
@@ -634,6 +644,8 @@ public class LoginPageTest extends TestBase {
 		
 		}
 		catch(Exception e) {
+			
+			System.out.println("inside catch");
 			
 		}
 		
@@ -1288,7 +1300,7 @@ public class LoginPageTest extends TestBase {
 		
 		
 		
-		 driver.get("https://myfunding.ncf-sandbox.com/deleteCompanyData/13483988");
+		    driver.get("https://myfunding.ncf-sandbox.com/deleteCompanyData/13483988");
 			
 			driver.get("https://nucleus--qa.sandbox.my.salesforce.com/");
 			

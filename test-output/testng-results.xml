@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="11" total="12" passed="1" failed="0" skipped="0">
+<testng-results ignored="9" total="10" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-22T20:05:05 IST" name="Default suite" finished-at="2024-08-22T20:05:36 IST" duration-ms="31095">
+  <suite started-at="2024-08-23T15:40:59 IST" name="Default suite" finished-at="2024-08-23T15:43:13 IST" duration-ms="134465">
     <groups>
     </groups>
-    <test started-at="2024-08-22T20:05:05 IST" name="Default test" finished-at="2024-08-22T20:05:36 IST" duration-ms="31095">
-      <class name="com.nucleus.qa.testcases.CoreSystemTesting">
-        <test-method is-config="true" signature="start()[pri:0, instance:com.nucleus.qa.testcases.CoreSystemTesting@23c650a3]" started-at="2024-08-22T20:05:05 IST" name="start" finished-at="2024-08-22T20:05:05 IST" duration-ms="14" status="PASS">
+    <test started-at="2024-08-23T15:40:59 IST" name="Default test" finished-at="2024-08-23T15:43:13 IST" duration-ms="134465">
+      <class name="com.nucleus.qa.testcases.LoginPageTest">
+        <test-method is-config="true" signature="start()[pri:0, instance:com.nucleus.qa.testcases.LoginPageTest@44d70181]" started-at="2024-08-23T15:40:59 IST" name="start" finished-at="2024-08-23T15:40:59 IST" duration-ms="15" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- start -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.nucleus.qa.testcases.CoreSystemTesting@23c650a3]" started-at="2024-08-22T20:05:05 IST" name="setUp" finished-at="2024-08-22T20:05:08 IST" duration-ms="2925" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.nucleus.qa.testcases.LoginPageTest@44d70181]" started-at="2024-08-23T15:40:59 IST" name="setUp" finished-at="2024-08-23T15:41:02 IST" duration-ms="3426" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="TestCase11()[pri:0, instance:com.nucleus.qa.testcases.CoreSystemTesting@23c650a3]" started-at="2024-08-22T20:05:08 IST" name="TestCase11" finished-at="2024-08-22T20:05:36 IST" duration-ms="27901" status="PASS">
+        <test-method signature="TestCase1()[pri:0, instance:com.nucleus.qa.testcases.LoginPageTest@44d70181]" started-at="2024-08-23T15:41:02 IST" name="TestCase1" finished-at="2024-08-23T15:43:12 IST" duration-ms="130494" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TestCase11 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.nucleus.qa.testcases.CoreSystemTesting@23c650a3]" started-at="2024-08-22T20:05:36 IST" name="tearDown" finished-at="2024-08-22T20:05:36 IST" duration-ms="252" status="PASS">
+        </test-method> <!-- TestCase1 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.nucleus.qa.testcases.LoginPageTest@44d70181]" started-at="2024-08-23T15:43:12 IST" name="tearDown" finished-at="2024-08-23T15:43:13 IST" duration-ms="527" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="Exit()[pri:0, instance:com.nucleus.qa.testcases.CoreSystemTesting@23c650a3]" started-at="2024-08-22T20:05:36 IST" name="Exit" finished-at="2024-08-22T20:05:36 IST" duration-ms="314" status="PASS">
+        <test-method is-config="true" signature="Exit()[pri:0, instance:com.nucleus.qa.testcases.LoginPageTest@44d70181]" started-at="2024-08-23T15:43:13 IST" name="Exit" finished-at="2024-08-23T15:43:13 IST" duration-ms="301" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Exit -->
-      </class> <!-- com.nucleus.qa.testcases.CoreSystemTesting -->
+      </class> <!-- com.nucleus.qa.testcases.LoginPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
