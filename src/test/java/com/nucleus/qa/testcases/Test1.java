@@ -30,9 +30,53 @@ public class Test1 {
 		driver.findElement(By.xpath("//img[@alt='myCollection']")).isDisplayed();
 		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("shahrukh.aatar@mypulse.io");
 	
-		//Select select = new Select(element1);
 		
-		//select.selectByIndex(0)
+		driver.findElement(By.partialLinkText("REGISTER")).sendKeys("shahrukh.aatar@mypulse.io");
+		
+		
+				
+				
+				
+				
+		
+				WebDriverWait wait=new  WebDriverWait (driver,90);
+				
+				wait.until(ExpectedConditions.elementToBeClickable(By.id("input.form-control custominput")));
+				
+				driver.findElement(By.cssSelector("input.form-control custominput")).click();
+				
+				
+			 
+				WebElement Element = driver.findElement(By.id("purpose_funding"));
+				
+			Select select = new Select(Element);
+			
+			select.selectByVisibleText("MBO");
+			select.selectByValue("MBO");
+			
+			
+			driver.switchTo().alert().dismiss();
+			
+			driver.switchTo().alert().sendKeys("");
+			
+			WebElement Element1 = driver.findElement(By.xpath("//button[contains(text(),'Finance')]"));
+			
+			Actions action = new Actions(driver);
+			
+			action.moveToElement(Element1).build().perform();
+			
+			driver.close();
+			driver.quit();
+			
+			
+			 
+			 
+			 
+			
+				
+		
+		
+		
 	}
 	}
 		

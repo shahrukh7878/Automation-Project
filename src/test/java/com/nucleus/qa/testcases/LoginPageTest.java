@@ -298,7 +298,7 @@ public class LoginPageTest extends TestBase {
 	public void TestCase1() throws Exception  {
 		
 		
-		 test1 = extent.createTest("Test Case 1", "NucleusTestCase ");
+		 test1 = extent.createTest("Test Case1", "NucleusTestCase ");
 		try {
 			
 		ArrayList data=d.getData("TestCase1",path);
@@ -330,16 +330,16 @@ public class LoginPageTest extends TestBase {
 		String Name = (String) data.get(29);
 		
 	
-        driver.get("https://myfunding.ncf-sandbox.com/deleteCompanyData/01554169");
+       // driver.get("https://myfunding.ncf-sandbox.com/deleteCompanyData/01554169");
 	
-		driver.get("https://nucleus--qa.sandbox.my.salesforce.com/");
+		/*driver.get("https://nucleus--qa.sandbox.my.salesforce.com/");
 		
 		driver.findElement(By.xpath("//input[@id='username']")).sendKeys("shahrukh.aatar@mypulse.io.qa");
 		
 		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Hasanw@123456");
 		
 		driver.findElement(By.xpath("//input[@id='Login']")).click();
-		Sleep(3000);
+		Sleep(3000);*/
 		
 		//new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@title='User']"))).isDisplayed();
 		// new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath("//td[contains(text(),'"+CWID+"')]"))).isDisplayed();
@@ -369,7 +369,7 @@ public class LoginPageTest extends TestBase {
 		//Sleep(5000);
 		//driver.findElement(By.xpath("//input[@id='phSearchButton']")).click();		
 		//System.out.println("click on serch23333333333333333333333333333333");
-		try {
+		/*try {
 
 			for(int iCount=1;iCount<=100;iCount++) {
 				Sleep(3000);
@@ -392,7 +392,7 @@ public class LoginPageTest extends TestBase {
 		}
 		catch(Exception e) {
 			
-		}
+		}*/
 
 		driver.get(url);
 		
@@ -589,7 +589,7 @@ public class LoginPageTest extends TestBase {
 		String Name = (String) data.get(29);
 		
 
-		driver.get("https://myfunding.ncf-sandbox.com/deleteCompanyData/12225716");
+		/*driver.get("https://myfunding.ncf-sandbox.com/deleteCompanyData/12225716");
 		 
 		driver.get("https://nucleus--qa.sandbox.my.salesforce.com/");
 		
@@ -647,7 +647,7 @@ public class LoginPageTest extends TestBase {
 			
 			System.out.println("inside catch");
 			
-		}
+		}*/
 		
 		driver.get(url);
 		
@@ -854,7 +854,7 @@ public class LoginPageTest extends TestBase {
 		String BankType = (String) data.get(24);
 		String Name = (String) data.get(29);
 		
-		    driver.get("https://myfunding.ncf-sandbox.com/deleteCompanyData/13483988");
+		  /*  driver.get("https://myfunding.ncf-sandbox.com/deleteCompanyData/13483988");
 		    
 			driver.get("https://nucleus--qa.sandbox.my.salesforce.com/");
 		
@@ -916,9 +916,10 @@ public class LoginPageTest extends TestBase {
 
 			}
 			catch(Exception e) {
-			}
+			}*/
+		
+		
 			driver.get(url);
-			
 		Screenshot();
 		WriteExtentReport =test1.createNode("Navigate to Application landing page");
 		WriteExtentReport.log(Status.PASS, WriteExtentReport.addScreenCaptureFromPath(sScreenshotFilePath)+"pass");

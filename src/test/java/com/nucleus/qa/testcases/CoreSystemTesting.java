@@ -445,7 +445,7 @@ public class CoreSystemTesting extends TestBase  {
 			}
 			
 		}		
-			@Test(enabled=false)
+			@Test(enabled=true)
 		public void TestCase3() throws Exception {
 			 test1 = extent.createTest("Test Case 3", "mypulse.io Portal");
 			
